@@ -292,32 +292,37 @@ public class EgovBBSManageController {
      */
     @RequestMapping("/cop/bbs/addBoardArticle.do")
     public String addBoardArticle(@ModelAttribute("searchVO") BoardVO boardVO, ModelMap model) throws Exception {
-	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
-	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
-
-	BoardMasterVO bdMstr = new BoardMasterVO();
-
-	if (isAuthenticated) {
-
-	    BoardMasterVO vo = new BoardMasterVO();
-	    vo.setBbsId(boardVO.getBbsId());
-	    vo.setUniqId(user.getUniqId());
-
-	    bdMstr = bbsAttrbService.selectBBSMasterInf(vo);
-	    model.addAttribute("bdMstr", bdMstr);
-	}
-
-	//----------------------------
-	// 기본 BBS template 지정 
-	//----------------------------
-	if (bdMstr.getTmplatCours() == null || bdMstr.getTmplatCours().equals("")) {
-	    bdMstr.setTmplatCours("/css/egovframework/com/cop/tpl/egovBaseTemplate.css");
-	}
-
-	model.addAttribute("brdMstrVO", bdMstr);
-	////-----------------------------
-
-	return "egovframework/com/cop/bbs/EgovNoticeRegist";
+		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
+	
+		BoardMasterVO bdMstr = new BoardMasterVO();
+	
+		if (isAuthenticated) {
+	
+		    BoardMasterVO vo = new BoardMasterVO();
+		    vo.setBbsId(boardVO.getBbsId());
+		    vo.setUniqId(user.getUniqId());
+	
+		    bdMstr = bbsAttrbService.selectBBSMasterInf(vo);
+		    model.addAttribute("bdMstr", bdMstr);
+		}
+	
+		//----------------------------
+		// 기본 BBS template 지정 
+		//----------------------------
+		if (bdMstr.getTmplatCours() == null || bdMstr.getTmplatCours().equals("")) {
+		    bdMstr.setTmplatCours("/css/egovframework/com/cop/tpl/egovBaseTemplate.css");
+		}
+	
+		model.addAttribute("brdMstrVO", bdMstr);
+		////-----------------------------
+	
+		// 게시판 스킨 분기
+		if(boardVO.getBbsId().equals("BBSMSTR_000000000021")) {	// 상담예약
+			return "egovframework/cschool/cadvisor";
+		} else {
+			return "egovframework/com/cop/bbs/EgovNoticeRegist";
+		}
     }
 
     /**
@@ -336,63 +341,68 @@ public class EgovBBSManageController {
 	    @ModelAttribute("bdMstr") BoardMaster bdMstr, @ModelAttribute("board") Board board, BindingResult bindingResult, SessionStatus status,
 	    ModelMap model) throws Exception {
 
-	LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
-	Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
-
-	beanValidator.validate(board, bindingResult);
-	if (bindingResult.hasErrors()) {
-
-	    BoardMasterVO master = new BoardMasterVO();
-	    BoardMasterVO vo = new BoardMasterVO();
-	    
-	    vo.setBbsId(boardVO.getBbsId());
-	    vo.setUniqId(user.getUniqId());
-
-	    master = bbsAttrbService.selectBBSMasterInf(vo);
-	    
-	    model.addAttribute("bdMstr", master);
-
-	    //----------------------------
-	    // 기본 BBS template 지정 
-	    //----------------------------
-	    if (master.getTmplatCours() == null || master.getTmplatCours().equals("")) {
-		master.setTmplatCours("css/egovframework/com/cop/tpl/egovBaseTemplate.css");
-	    }
-
-	    model.addAttribute("brdMstrVO", master);
-	    ////-----------------------------
-
-	    return "egovframework/com/cop/bbs/EgovNoticeRegist";
-	}
+		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
+		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
 	
-	if (isAuthenticated) {
-	    List<FileVO> result = null;
-	    String atchFileId = "";
-	    
-	    final Map<String, MultipartFile> files = multiRequest.getFileMap();
-	    if (!files.isEmpty()) {
-		result = fileUtil.parseFileInf(files, "BBS_", 0, "", "");
-		atchFileId = fileMngService.insertFileInfs(result);
-	    }
-	    board.setAtchFileId(atchFileId);
-	    board.setFrstRegisterId(user.getUniqId());
-	    board.setBbsId(board.getBbsId());
-	    
-	    
-	    //board.setNtcrNm("");	// dummy 오류 수정 (익명이 아닌 경우 validator 처리를 위해 dummy로 지정됨)
-	    board.setPassword("");	// dummy 오류 수정 (익명이 아닌 경우 validator 처리를 위해 dummy로 지정됨)
-	    
-	    
-	    board.setNtcrId(user.getId()); //게시물 통계 집계를 위해 등록자 ID 저장
-	    board.setNtcrNm(user.getName()); //게시물 통계 집계를 위해 등록자 Name 저장
-	    
-	    board.setNttCn(unscript(board.getNttCn()));	// XSS 방지
-	    
-	    bbsMngService.insertBoardArticle(board);
-	}
+		beanValidator.validate(board, bindingResult);
+		if (bindingResult.hasErrors()) {
+	
+		    BoardMasterVO master = new BoardMasterVO();
+		    BoardMasterVO vo = new BoardMasterVO();
+		    
+		    vo.setBbsId(boardVO.getBbsId());
+		    vo.setUniqId(user.getUniqId());
+	
+		    master = bbsAttrbService.selectBBSMasterInf(vo);
+		    
+		    model.addAttribute("bdMstr", master);
+	
+		    //----------------------------
+		    // 기본 BBS template 지정 
+		    //----------------------------
+		    if (master.getTmplatCours() == null || master.getTmplatCours().equals("")) {
+			master.setTmplatCours("css/egovframework/com/cop/tpl/egovBaseTemplate.css");
+		    }
+	
+		    model.addAttribute("brdMstrVO", master);
+		    ////-----------------------------
+	
+		    return "egovframework/com/cop/bbs/EgovNoticeRegist";
+		}
+		
+		if (isAuthenticated) {
+		    List<FileVO> result = null;
+		    String atchFileId = "";
+		    
+		    final Map<String, MultipartFile> files = multiRequest.getFileMap();
+		    if (!files.isEmpty()) {
+			result = fileUtil.parseFileInf(files, "BBS_", 0, "", "");
+			atchFileId = fileMngService.insertFileInfs(result);
+		    }
+		    board.setAtchFileId(atchFileId);
+		    board.setFrstRegisterId(user.getUniqId());
+		    board.setBbsId(board.getBbsId());
+		    
+		    
+		    //board.setNtcrNm("");	// dummy 오류 수정 (익명이 아닌 경우 validator 처리를 위해 dummy로 지정됨)
+		    board.setPassword("");	// dummy 오류 수정 (익명이 아닌 경우 validator 처리를 위해 dummy로 지정됨)
+		    
+		    
+		    board.setNtcrId(user.getId()); //게시물 통계 집계를 위해 등록자 ID 저장
+		    board.setNtcrNm(user.getName()); //게시물 통계 집계를 위해 등록자 Name 저장
+		    
+		    board.setNttCn(unscript(board.getNttCn()));	// XSS 방지
+		    
+		    bbsMngService.insertBoardArticle(board);
+		}
 
-	//status.setComplete();
-	return "forward:/cop/bbs/selectBoardList.do";
+		if(boardVO.getBbsId().equals("BBSMSTR_000000000021")) { // 상담예약게시판
+			model.addAttribute("msg", "상담신청이 완료되었습니다.");
+			return "forward:/cschool/cadvisor.do";
+		} else {
+			//status.setComplete();
+			return "forward:/cop/bbs/selectBoardList.do";
+		}
     }
 
     /**

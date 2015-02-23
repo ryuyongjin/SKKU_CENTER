@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+
+/******************************************** main wrap ********************************************/
+/* main : mainvisual */
+#rollingBanner{position:relative;margin:0 auto;width:1150px;}
+.mainVisual{position:relative;width:100%;height:370px;overflow:hidden;background:#e3e3e3;margin-top:115px;}
+.mainVisual .b_img{position:absolute;top:0;left:50%;margin:0 0 0 -50px;}
+.mainVisual .btn_text_box{width:100%;position:absolute;top:0;left:0;z-index:60;}
+.mainVisual .btn_left{position:absolute;top:150px;left:15px;cursor:pointer;}
+.mainVisual .btn_right{position:absolute;top:150px;right:15px;cursor:pointer;}
+.mainVisual .btn_left img{opacity:0.2;filter:alpha(opacity=20);}
+.mainVisual .btn_left img:hover{opacity:0.4;filter:alpha(opacity=40);}
+.mainVisual .btn_right img{opacity:0.2;filter:alpha(opacity=20);}
+.mainVisual .btn_right img:hover{opacity:0.4;filter:alpha(opacity=40);}
+.mainVisual .cnt{position:absolute;top:336px;left:50%;margin-left:-50px;}
+.mainVisual .cnt span{margin:0 0 0 10px;display:inline-block;}
+.mainVisual .cnt a{margin-right:5px;}
+
+.mainContent{overflow:hidden;position:relative;margin-top:65px;}
+.mainContent h3{font-size:25px;color:#000;font-weight:normal;font-family:NanumGothicBold;padding-bottom:15px;}
+
+.mainContent .cschoolBox{float:left;width:350px;margin-right:50px;}
+.mainContent .aceBox{float:left;width:350px;}
+
+.mainContent .colorBox{width:100%;height:100px;line-height:100px;}
+.mainContent .colorBox p{font-size:18px;color:#fff;font-family:NanumGothicBold;padding:25px 0 0 27px;}
+.mainContent .colorBoxbg1{background:#00adcb url("/images/main/colorBoxbg1.gif") center right no-repeat;}
+.mainContent .colorBoxbg2{background:#b6d235 url("/images/main/colorBoxbg2.gif") center right no-repeat;}
+
+.mainContent .bannerList li{border-bottom:1px solid #e7e7e7;overflow:hidden;}
+.mainContent .bannerList li a{display:block;height:79px;}
+.mainContent .bannerList li a:hover{background:#f4f4f4;}
+.mainContent .bannerList .ico{float:left;width:85px;padding-top:15px;}
+.mainContent .bannerList li p{font-size:18px;color:#000;font-family:NanumGothicBold;padding-top:18px;}
+.mainContent .bannerList li span{font-size:12px;color:#919191;}
+
+.mainContent .bannerBtn a{display:block;height:79px;background:#f8f8f8;border-bottom:1px solid #e7e7e7;overflow:hidden;}
+.mainContent .bannerBtn a:hover{background:#eee;}
+.mainContent .bannerBtn .ico{float:right;width:120px;padding-top:10px;}
+.mainContent .bannerBtn p{font-size:18px;color:#00adcb;font-family:NanumGothicBold;padding:18px 0 0 20px;}
+.mainContent .bannerBtn p img{margin:4px 0 0 10px;}
+.mainContent .bannerBtn span{font-size:12px;color:#919191;padding:0 0 0 20px;}
+
+.mainContent .noticeBox{float:right;width:350px;}
+.mainContent .noticeBox .noticeList{position:relative;}
+.mainContent .noticeBox .noticeList dl{border-top:1px solid #d8d8d8;height:200px;}
+.mainContent .noticeBox .noticeList dt{float:left;width:80%;padding:4px 0;}
+.mainContent .noticeBox .noticeList dd{float:left;width:20%;text-align:right;font-size:11px;color:#bdbdbd;padding:4px 0;}
+.mainContent .noticeBox .noticeList .more{position:absolute;top:10px;right:0;font-size:11px;color:#bdbdbd;}
+.mainContent .noticeBox .noticeList .more a{color:#bdbdbd;}
+
+
+
+/******************************************** media ********************************************/
+@media only screen and (min-width:1025px) { 
+
+}
+
+
+@media only screen and (min-width:851px) and (max-width:1024px)  {
+#rollingBanner{width:100%;}
+#rollingBanner img{width:100%;}
+
+.mainVisual{height:280px;}
+.mainVisual .btn_left{top:120px;}
+.mainVisual .btn_right{top:120px;}
+.mainVisual .cnt{top:280px;}
+
+.mainContent .cschoolBox{width:31%;margin-right:30px;}
+.mainContent .aceBox{width:31%;}
+.mainContent .noticeBox{width:31%;}
+.mainContent .noticeBox .banner img{width:100%;}
+
+
+}
+
+@media only screen and (min-width:728px) and (max-width:850px)  {
+#rollingBanner{width:100%;}
+#rollingBanner img{width:100%;}
+
+.mainVisual{height:250px;}
+.mainVisual .btn_left{top:90px;}
+.mainVisual .btn_right{top:90px;}
+.mainVisual .cnt{top:230px;}
+
+.mainContent .cschoolBox{width:48%;margin:0;}
+.mainContent .aceBox{float:right;width:48%;}
+.mainContent .noticeBox{width:100%;overflow:hidden;margin-top:40px;}
+.mainContent .noticeBox .noticeList{float:left;width:48%;}
+.mainContent .noticeBox .banner{float:right;width:48%;margin-top:45px;}
+
+}
+
+@media only screen and (max-width :727px)  { 
+#rollingBanner{width:100%;}
+#rollingBanner img{width:100%;}
+
+.mainVisual{height:200px;}
+.mainVisual{margin-top:0;}
+.mainVisual .btn_left{display:none !important;}
+.mainVisual .btn_right{display:none !important;}
+
+.mainContent .cschoolBox{width:100%;}
+.mainContent .aceBox{width:100%;margin:50px 0 0 0;}
+
+.mainContent .noticeBox{width:100%;overflow:hidden;margin-top:40px;}
+.mainContent .noticeBox .noticeList{float:none;width:100%;}
+.mainContent .noticeBox .banner{float:none;width:100%;}
+.mainContent .noticeBox .banner img{width:100%;}
+
+}
+
+@media only screen and (max-width :650px)  { 
+.mainVisual{height:160px;}
+
+
+}
+
+@media only screen and (max-width :450px) {
+.mainVisual{height:140px;}	
+
+.mainContent .colorBox p{font-size:17px;}
+
+.mainContent .bannerBtn .ico{float:right;width:75px;padding-top:16px;}
+.mainContent .bannerBtn .ico img{width:95%;}
+.mainContent .bannerBtn p{font-size:17px;padding:18px 0 0 10px;}
+.mainContent .bannerBtn p img{margin:4px 0 0 5px;}
+.mainContent .bannerBtn span{letter-spacing:-1px;padding:0 0 0 10px;}
+
+.mainContent .bannerList .ico{width:75px;padding-top:15px;}
+.mainContent .bannerList li p{font-size:17px;padding-top:15px;}
+.mainContent .bannerList li span{font-size:12px;letter-spacing:-1px;}
+}
+
+@media only screen and (max-width :400px) {
+.mainVisual{height:100px;}	
+}

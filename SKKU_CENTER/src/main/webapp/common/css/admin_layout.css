@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+
+
+/******************************************** common css ********************************************/
+
+
+/******************************************** layout ********************************************/
+#admin_header{position:fixed;left:0;top:0;z-index:10;width:200px;height:100%;background:#4a4a4a;}
+#admin_header h1.logo{position:absolute;left:10px;top:40px;}
+#admin_header h1.logo img{width:95%;}
+#admin_header .admin_gnb{position:absolute;width:100%;left:0;top:110px;}
+#admin_header .admin_gnb h2{background:#323232;margin-top:10px;}
+#admin_header .admin_gnb h2 p{color:#fff;font-size:16px;font-family:'NanumGothicBold';padding:3px 10px 3px 30px;}
+#admin_header .admin_gnb li{color:#bdbdbd;font-size:14px;font-family:'NanumGothicBold';}
+#admin_header .admin_gnb li a{display:block;color:#bdbdbd;padding:2px 0 2px 30px;}
+#admin_header .admin_gnb li a:hover{display:block;color:#fff;background:#5d5d5d;}
+.admin_util{position:absolute;top:0;right:0;padding:6px 50px 0 0;z-index:999;}
+
+#admin_footer{margin:80px 0 0 200px;padding:15px 0 15px 40px;font-size:11px;color:#696969;border-top:1px solid #e8e8e8;}
+
+#admin_container{position:relative;overflow:hidden;}
+#admin_container .admin_title{background:#f0f0f0;margin-left:200px;min-width:800px;}
+#admin_container .admin_title .admin_path{overflow:hidden;height:120px;}
+#admin_container .admin_title .admin_path h3{float:left;color:#000;font-size:45px;font-family:'NanumGothicBold';padding:45px 0 0 40px;}
+#admin_container .admin_title .admin_path h2{float:left;color:#757575;font-size:24px;font-family:'NanumGothicBold';padding:65px 0 0 30px;}
+
+#admin_container .admin_content{margin-left:200px;padding:25px 50px 0 40px;min-height:400px;}
+
+
+
+/******************************************** sub wrap ********************************************/
+
+
+
+/* 도서등록 - 상단 카테고리 */
+.cate_listtop{overflow:hidden;border:1px solid #e4e3e2;}
+.cate_listtop dt{float:left;width:15%;padding:10px 0 0 20px;color:#000;font-size:16px;font-family:'NanumGothicBold';}
+.cate_listtop dd{float:left;width:80%;padding:10px 0 10px 20px;border-left:1px solid #e4e3e2;}
+.cate_listtop dd li{border-bottom:1px solid #e4e3e2;padding:2px 0;overflow:hidden;}
+.cate_listtop dd p{font-size:11px;}
+.cate_list{border:1px solid #e4e3e2;padding:10px 20px;background:#f5f5f5;margin:10px 0 30px 0;}
+.cate_list a.btnBlack{height:110px;line-height:110px;margin-left:20px;}
+
+
+/* faq */
+.faqWrap {border-top:1px solid #6b6b6b;border-bottom:1px solid #e9e9e9;}
+.faqWrap ul li {border-bottom:1px solid #e9e9e9;width:100%;overflow:hidden;}
+.faqWrap ul dl {}
+.faqWrap ul dl dt {padding:15px 0 15px 10px;}
+.faqWrap ul dl dt.on {border-bottom:1px solid #ededed;font-weight:bold;}
+.faqWrap ul dl dt.on a{color:#000;background:url("/2015admin/images/txt_question_on.gif") no-repeat 0 2px;}
+.faqWrap ul dl dt a {display:inline-block;padding-left:35px;background:url("/2015admin/images/txt_question.gif") no-repeat 0 2px;text-decoration:none;}
+.faqWrap ul dl dt strong {color:#000;padding-right:15px}
+.faqWrap ul dl dd {padding:15px 0 15px 46px;background:#fafafa url("/2015admin/images/txt_answer.gif") no-repeat 10px 15px;line-height:22px;}
+
+
+
+/******************************************** 반응형웹 ********************************************/
+
+@media screen and (min-width: 1281px) {
+#admin_container .admin_content{width:1100px;}
+}
+
+@media screen and (max-width: 1280px) {
+#admin_container .admin_content{width:900px;}
+}
+
+
+@media screen and (max-width: 1024px) {
+#admin_container .admin_title{min-width:700px;}
+#admin_container .admin_content{width:710px;}
+
+}
+
+@media screen and (max-width: 980px) {
+
+#admin_container .admin_content{width:640px;}
+}
+
+
+@media screen and (max-width: 768px) {
+
+}

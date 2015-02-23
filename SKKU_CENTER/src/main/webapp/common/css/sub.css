@@ -1,0 +1,399 @@
+@charset "utf-8";
+
+
+/* 타이틀 */
+h3.title{font-size:38px;line-height:40px;color:#000;font-family:'NanumGothicBold';font-weight:normal;padding:0 0 50px 0;}
+h4.titDepth1{background:url("/images/common/line_titDepth.gif") no-repeat top left;margin:50px 0 15px 0;overflow:hidden;}
+h4.titDepth1 p{float:left;font-size:24px;line-height:25px;color:#000;font-family:'NanumGothicBold';font-weight:normal;padding:8px 0 0 0;}
+h4.titDepth1 span{float:left;font-weight:normal;padding:15px 0 0 10px;font-size:15px;}
+h5.titDepth2{background:url("/images/common/line_titDepth2.gif") no-repeat 0 6px;margin:35px 0 10px 0;overflow:hidden;}
+h5.titDepth2 p{float:left;font-size:18px;line-height:20px;color:#00adcb;font-family:'NanumGothicBold';font-weight:normal;padding:0 0 0 17px;}
+h5.titDepth2 span{float:left;font-weight:normal;padding:3px 0 0 10px;}
+.titDepth3{font-size:16px;color:#000;font-family:'NanumGothicBold';margin:25px 0 5px 0;}
+h6.titDepth4{font-size:14px;color:#000;font-family:'NanumGothicBold';font-weight:normal;margin:15px 0 5px 0;}
+
+/* 이미지사이즈 */
+.img100{width:auto;}
+.img50{width:auto;}
+.img2{overflow:hidden;margin-top:10px;}
+.img2 li{float:left;width:49%;}
+.img2 li:first-child{margin-right:10px;}
+
+.img3{overflow:hidden;margin-top:10px;}
+.img3 li{float:left;width:32%;}
+.img3 li:first-child{margin-right:15px;}
+.img3 li:first-child + li{margin-right:15px;}
+
+/* 흰박스 */
+.whiteBox{border:1px solid #dddddd;padding:15px 25px;}
+.whiteBox dl{overflow:hidden;}
+.whiteBox dl dt{float:left;width:8%;font-size:17px;color:#000;font-family:'NanumGothicBold';margin:5px 0 5px 0;}
+.whiteBox dl dd{float:left;width:91%;margin:7px 0 7px 0;}
+
+/* 회색박스 */
+.grayBox{background:#f4f4f4;padding:15px 25px;}
+.grayBox .grayBoxcon{background:#fff;border:1px solid #ddd;margin-top:5px;}
+.grayBox .grayBoxcon dl{overflow:hidden;border-bottom:1px solid #ddd;width:95%;margin:0 auto;}
+.grayBox .grayBoxcon dl dt{float:left;width:23%;font-size:17px;color:#00adcb;font-family:'NanumGothicBold';margin:7px 0 7px 0;padding-left:15px;background:url("/images/common/line_titDepth2.gif") no-repeat 0 6px;}
+.grayBox .grayBoxcon dl dd{float:left;width:73%;margin:10px 0 10px 0;}
+
+/* 리스트타입 */
+.listType1 li{background:url("/images/common/ico_jum1.gif") no-repeat 0 12px;padding:3px 0 3px 12px;line-height:22px;text-align:left;}
+.listType2 li{background:url("/images/common/ico_jum1.gif") no-repeat 0 12px;padding:3px 0 3px 12px;line-height:22px;text-align:left;margin-left:20px;}
+.listType15 li{background:url("/images/common/ico_jum1.gif") no-repeat 0 12px;padding:3px 0 3px 12px;line-height:22px;text-align:left;font-size:15px;}
+
+/* 탭메뉴 */
+.tabWrap{overflow:hidden;margin:0 0 40px 0;border-left:1px solid #dedede;}
+.tabWrap li{float:left;font-size:15px;}
+.tabWrap li a{display:block;padding:10px 35px;background:#f7f7f7;color:#555555;font-family:NanumGothicBold;border-top:1px solid #dedede;border-bottom:1px solid #dedede;border-right:1px solid #dedede;}
+.tabWrap li a:hover{background:#dedede;color:#000;}
+.tabWrap li a.on{background:#818181;color:#fff;border:1px solid #818181;}
+
+/* 탭메뉴-창의리더역량개발 */
+.tabstepWrap{overflow:hidden;margin:0 0 40px 0;border-left:1px solid #dedede;}
+.tabstepWrap li{float:left;font-size:15px;width:50%;}
+.tabstepWrap li a{display:block;padding:10px 0;background:#f7f7f7;color:#555555;font-family:NanumGothicBold;border-top:1px solid #dedede;border-bottom:1px solid #dedede;border-right:1px solid #dedede;text-align:center;}
+.tabstepWrap li a:hover{background:#dedede;color:#000;}
+.tabstepWrap li a.on{background:#818181;color:#fff;border:1px solid #818181;}
+
+
+/* 센터소개 ****************************************************************/
+/* 센터장 인사말 */
+.greeting .gre_hi{font-size:18px;color:#000;font-family:'NanumGothicBold';margin-top:50px;}
+.greeting .gre_sign{text-align:right;}
+.greeting .gre_sign p{padding:0;}
+.greeting p{padding-bottom:20px;}
+
+/* 설립목적 및 연혁 */
+.historyBox{overflow:hidden;}
+.historyBox li{float:left;width:48%;height:80px;border:1px solid #dcdcdc;margin:0 15px 8px 0;background:url("/images/common/ico_arrow1.gif") no-repeat 95% 50%;}
+.historyBox li p{width:70%;padding:20px 0 0 20px;font-size:15px;line-height:20px;}
+
+
+/* 연구영역 네트워크 */
+.network_pic{margin-bottom:50px;}
+
+
+/* 대학특성화 ****************************************************************/
+/* 사업단박스 */
+.creativeBox{overflow:hidden;border-top:1px solid #dcdcdc;border-left:1px solid #dcdcdc;border-right:1px solid #dcdcdc;}
+.creativeBox dt{float:left;width:15%;height:85px;line-height:85px;border-bottom:1px solid #dcdcdc;background:#f7f7f7;font-size:30px;color:#000;text-align:center;}
+.creativeBox dd{float:left;width:85%;height:85px;border-bottom:1px solid #dcdcdc;}
+.creativeBox dd p{font-size:16px;color:#000;font-family:'NanumGothicBold';margin:10px 0 0 20px;}
+.creativeBox dd ul{margin-left:20px;}
+
+/* C-School ****************************************************************/
+/* 교과목 - ci 적용박스 */
+.colorBox{overflow:hidden;}
+.colorBox dl{float:left;width:48%;margin:0 20px 15px 0;}
+.colorBox dl.right{margin-right:0;}
+.colorBox dt{padding:5px 0 5px 15px;font-size:18px;color:#fff;font-family:'NanumGothicBold';background:#00adcb;}
+.colorBox dd{border-left:1px solid #dddddd;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;}
+.colorBox dl dd ul{padding:10px 10px 10px 15px;}
+.colorBox dt.bgGreen{background:#b6d235;}
+.colorBox dt.bgPerple{background:#6b489d;}
+
+/* I-School 기반의 세계 최고 수준 데이터 전문가 양성 사업단  - 2개 박스 */
+.imgtxtBox{overflow:hidden;margin-top:50px;}
+.imgtxtBox dt{float:left;width:48%;margin:0 10px 0 0;}
+.imgtxtBox dd{float:right;width:48%;}
+.imgtxtBox2{overflow:hidden;margin-top:50px;}
+.imgtxtBox2 dt{float:right;width:48%;}
+.imgtxtBox2 dd{float:left;width:48%;margin:0 10px 0 0;}
+
+/* I-School 기반의 세계 최고 수준 데이터 전문가 양성 사업단  박스 */
+.objectBox{overflow:hidden;margin-bottom:10px;}
+.objectBox dt{float:left;width:15%;min-height:52px;padding:20px 0 0 0;margin-bottom:5px;background:#00adcb;font-size:30px;color:#fff;text-align:center;}
+.objectBox dd{float:left;width:84%;min-height:50px;padding:20px 0 0 0;margin-bottom:5px;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;border-right:1px solid #dcdcdc;}
+.objectBox dd p{font-size:16px;line-height:18px;color:#000;font-family:'NanumGothicBold';margin:4px 0 4px 20px;}
+
+/* I-School - 동영상박스 */
+.ischoolMovie{width:100%;background:#f7f7f7;border:1px solid #ebebeb;text-align:center;padding:20px 0;}
+
+/* ACE ****************************************************************/
+/* 개인역량 - step1 */
+.step1Title{overflow:hidden;}
+.step1Title li.level{float:left;width:20%;line-height:28px;border-top:1px solid #00adcb;border-left:1px solid #00adcb;border-bottom:1px solid #00adcb;background:#fff url("/images/ace/bg_step1arrow01.gif") no-repeat right center;}
+.step1Title li.level p{padding:24px 0 24px 30px;font-size:24px;color:#00adcb;font-family:'NanumGothicBold';}
+.step1Title li.levelCon{float:left;width:79%;line-height:28px;background:#00adcb url("/images/ace/bg_step1arrow02.gif") no-repeat right center;}
+.step1Title li.levelCon p{font-size:24px;color:#fff;font-family:'NanumGothicBold';}
+.step1Title li.levelCon p.con1{padding:25px 0 25px 20px;}
+.step1Title li.levelCon p.con2{padding:13px 0 12px 20px;}
+
+/* 개인역량 - step2 */
+.step2Title{overflow:hidden;}
+.step2Title li.level{float:left;width:20%;line-height:28px;border-top:1px solid #b7d235;border-left:1px solid #b7d235;border-bottom:1px solid #b7d235;background:#fff url("/images/ace/bg_step2arrow01.gif") no-repeat right center;}
+.step2Title li.level p{padding:24px 0 24px 30px;font-size:24px;color:#b7d235;font-family:'NanumGothicBold';}
+.step2Title li.levelCon{float:left;width:79%;line-height:28px;background:#b7d235 url("/images/ace/bg_step2arrow02.gif") no-repeat right center;}
+.step2Title li.levelCon p{font-size:24px;color:#fff;font-family:'NanumGothicBold';}
+.step2Title li.levelCon p.con1{padding:25px 0 25px 20px;}
+.step2Title li.levelCon p.con2{padding:13px 0 12px 20px;}
+
+/* 개인역량 - step3 */
+.step3Title{overflow:hidden;}
+.step3Title li.level{float:left;width:20%;line-height:28px;border-top:1px solid #6b489d;border-left:1px solid #6b489d;border-bottom:1px solid #6b489d;background:#fff url("/images/ace/bg_step3arrow01.gif") no-repeat right center;}
+.step3Title li.level p{padding:24px 0 24px 30px;font-size:24px;color:#6b489d;font-family:'NanumGothicBold';}
+.step3Title li.levelCon{float:left;width:79%;line-height:28px;background:#6b489d url("/images/ace/bg_step3arrow02.gif") no-repeat right center;}
+.step3Title li.levelCon p{font-size:24px;color:#fff;font-family:'NanumGothicBold';}
+.step3Title li.levelCon p.con1{padding:25px 0 25px 20px;}
+.step3Title li.levelCon p.con2{padding:13px 0 12px 20px;}
+
+/* 개인역량 - 콘텐츠 */
+.stepCon1{overflow:hidden;margin-top:40px;}
+.stepCon1 th{width:33%;}
+.stepCon1 td{width:66%;}
+
+.stepCon2{overflow:hidden;margin-top:40px;}
+.stepCon2 th{width:66%;vertical-align:top;text-align:left;font-weight:normal;}
+.stepCon2 th .txt{font-size:16px;line-height:30px;padding:10px 80px 0 0;}
+.stepCon2 td{width:33%;}
+
+/* 참여후기 - step1 */
+.psBox{position:relative;width:100%;}
+.psBox .psLeft{position:absolute;top:-1px;left:0;z-index:20;}
+.psBox .psRight{position:absolute;top:-1px;right:-1px;z-index:20;}
+.psBox .psBottomleft{position:absolute;bottom:-9px;left:0;z-index:20;}
+.psBox .psBottomRight{position:absolute;bottom:-10px;right:-1px;z-index:20;}
+
+.psBoxStep1{background:#f7f7f7 url("/images/ace/bg_psBoxblue1.gif") repeat-y top left;border-top:1px solid #00adcb;border-right:1px solid #00adcb;z-index:10;}
+.psBoxStep1 .psCon{margin:30px 30px 0 30px;}
+.psBoxStep1 .psCon p{padding-bottom:20px;border-bottom:1px solid #d2d2d2;}
+.psBoxStep1 .psCon p.psname{padding:20px 0;border:0;font-size:16px;color:#000;font-family:'NanumGothicBold';}
+.psBoxStep1 .psCon p.psname span{color:#00adcb;}
+.psBoxStep1 .psBottomline{border-top:1px solid #00adcb;border-bottom:4px solid #f0f0f0;}
+
+/* 참여후기 - step2 */
+.psBoxStep2{background:#f7f7f7 url("/images/ace/bg_psBoxgreen1.gif") repeat-y top left;border-top:1px solid #b7d235;border-right:1px solid #b7d235;z-index:10;}
+.psBoxStep2 .psCon{margin:30px 30px 0 30px;}
+.psBoxStep2 .psCon p{padding-bottom:20px;border-bottom:1px solid #d2d2d2;}
+.psBoxStep2 .psCon p.psname{padding:20px 0;border:0;font-size:16px;color:#000;font-family:'NanumGothicBold';}
+.psBoxStep2 .psCon p.psname span{color:#b7d235;}
+.psBoxStep2 .psBottomline{border-top:1px solid #b7d235;border-bottom:4px solid #f0f0f0;}
+
+/* 참여후기 - step3 */
+.psBoxStep3{background:#f7f7f7 url("/images/ace/bg_psBoxpurple1.gif") repeat-y top left;border-top:1px solid #6b489d;border-right:1px solid #6b489d;z-index:10;}
+.psBoxStep3 .psCon{margin:30px 30px 0 30px;}
+.psBoxStep3 .psCon p{padding-bottom:20px;border-bottom:1px solid #d2d2d2;}
+.psBoxStep3 .psCon p.psname{padding:20px 0;border:0;font-size:16px;color:#000;font-family:'NanumGothicBold';}
+.psBoxStep3 .psCon p.psname span{color:#6b489d;}
+.psBoxStep3 .psBottomline{border-top:1px solid #6b489d;border-bottom:4px solid #f0f0f0;}
+
+/* 성균효과성 프로그램 박스 */
+.promainBox{overflow:hidden;}
+.promainBox li{float:left;width:48%;margin:0 10px 5px 0;}
+.promainBox .num{float:left;width:16%;font-size:25px;color:#fff;font-family:'NanumGothicBold';background:#848484;padding:21px 0 21px 0;text-align:center;}
+.promainBox .txt{float:left;width:80%;font-size:16px;color:#555555;border-top:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;border-right:1px solid #dcdcdc;padding:20px 0 20px 10px;}
+
+
+/* 로그인 */
+.loginWrap {width:100%;}
+.loginWrap .loginTitle{color:#000;font-size:15px;margin:0 0 30px 0;font-weight:normal;}
+.loginWrap .login_fs {position:relative;padding:50px 20px 50px 150px;background:#eee;border:1px solid #00adcb;}
+.loginWrap .login_fs label{font-size:16px;}
+.loginWrap .login_fs .login_id{position:absolute;top:57px;left:150px;font-family:'NanumGothicBold';color:#000;}
+.loginWrap .login_fs .login_pw{position:absolute;top:98px;left:150px;font-family:'NanumGothicBold';color:#000;}
+.loginWrap .login_fs .frm_input{display:block;margin:0 0 6px 95px;width:50%;height:32px;border:1px solid #ccc;background:#fff important;font-size:16px;color:#000;font-family:'NanumGothicBold';}
+.loginWrap .login_fs .btn_submit{position:absolute;top:50px;right:150px;width:100px;height:74px;border:0;background:#00adcb;font-size:16px;color:#fff;cursor:pointer;font-family:'NanumGothicBold';}
+.loginWrap .login_fs .btn_submit:hover{background:#333;}
+.loginWrap .loginTxt{overflow:hidden;margin-top:20px;}
+.loginWrap .loginTxt dt{float:left;width:60%;}
+.loginWrap .loginTxt .txt1{font-size:15px;font-family:'NanumGothicBold';color:#000;line-height:18px;}
+.loginWrap .loginTxt .txt2{font-size:12px;color:#999;line-height:14px;}
+.loginWrap .loginTxt dd{float:left;width:40%;text-align:right;}
+.loginWrap .loginTxt dd a.btnGray{width:200px;padding:15px 0;text-align:center;}
+.loginWrap .skkuLogin{margin-bottom:30px;text-align:center;background:#f4f4f4;padding:10px 0;}
+
+/* 개인정보처리방침 */
+.fregister_private {margin:0 0 10px;padding:10px 0}
+.fregister_private textarea{display:block;padding:10px;width:97%;height:150px;line-height:20px;color:#000;}
+.fregister_private .fregister_agree {padding:10px 0 ;text-align:right}
+.fregister_private .fregister_agree label {display:inline-block;margin-right:5px;font-size:12px;}
+
+
+
+
+
+
+/******************************************** media ********************************************/
+@media only screen and (max-width :1024px)  { 
+/* 이미지사이즈 */
+.img100{width:100%;height:auto;}
+
+.img3 li{width:31%;}
+
+
+/* 탭메뉴 */
+.tabWrap li a{padding:10px 30px;}
+
+
+/* 설립목적 및 연혁 */
+.historyBox li{width:47%;}
+
+/* ACE ****************************************************************/
+/* 개인역량 */
+.step1Title li.level p{font-size:22px;}
+.step1Title li.levelCon p{font-size:20px;}
+.step1Title li.levelCon p.con2 span{font-size:18px;line-height:18px;}
+
+.step2Title li.level p{font-size:22px;}
+.step2Title li.levelCon p{font-size:20px;}
+.step2Title li.levelCon p.con2 span{font-size:16px;line-height:16px;}
+
+.step3Title li.level p{font-size:22px;}
+.step3Title li.levelCon p{font-size:20px;}
+.step3Title li.levelCon p.con2 span{font-size:18px;line-height:18px;}
+
+/* 개인역량 - 콘텐츠 */
+.stepCon1 th{width:40%;}
+.stepCon1 td{width:58%;}
+
+.stepCon2 th{width:66%;}
+.stepCon2 th .txt{padding:10px 20px 0 0;}
+.stepCon2 td{width:33%;}
+
+/* 로그인 */
+.loginWrap .login_fs {padding:50px 20px 50px 80px;}
+.loginWrap .login_fs .login_id{left:80px;}
+.loginWrap .login_fs .login_pw{left:80px;}
+.loginWrap .login_fs .frm_input{width:50%;}
+.loginWrap .login_fs .btn_submit{top:50px;right:80px;width:100px;}
+
+
+/* I-School - 동영상박스 */
+.ischoolMovie{text-align:center;}
+.ischoolMovie iframe{width:95%;height:400px;}
+}
+
+
+@media only screen and (max-width :727px)  { 
+/* 이미지사이즈 */
+.img100{width:100%;height:auto;}
+
+
+/* 성균효과성 프로그램 박스 */
+.promainBox li{float:none;width:100%;margin:0 0 10px 0;overflow:hidden;}
+
+/* 탭메뉴 */
+.tabWrap li a{padding:10px 25px;}
+
+/* I-School 기반의 세계 최고 수준 데이터 전문가 양성 사업단  - 2개 박스 */
+.imgtxtBox{}
+.imgtxtBox dt{float:none;width:100%;}
+.imgtxtBox dd{float:none;width:100%;margin:20px 0 0 0;}
+.imgtxtBox2{}
+.imgtxtBox2 dt{float:none;width:100%;}
+.imgtxtBox2 dd{float:none;width:100%;margin:20px 0 0 0;}
+
+}
+
+@media only screen and (max-width :650px)  { 
+/* 이미지사이즈 */
+.img2 li{float:none;width:100%;margin-bottom:10px;}
+.img3 li{float:none;width:100%;margin-bottom:10px;}
+
+/* 타이틀 */
+h3.title{font-size:33px;line-height:35px;padding:0 0 40px 0;}
+h4.titDepth1 p{font-size:20px;line-height:22px;}
+
+/* 흰박스 */
+.whiteBox dl dt{float:none;width:100%;}
+.whiteBox dl dd{float:none;width:100%;}
+
+/* 회색박스 */
+.grayBox .grayBoxcon dl dt{float:none;width:100%;}
+.grayBox .grayBoxcon dl dd{float:none;width:100%;}
+
+/* 탭메뉴 */
+.tabWrap{margin:0 0 30px 0;}
+.tabWrap li{width:50%;font-size:13px;}
+.tabWrap li a{padding:8px 0;text-align:center;}
+
+/* 탭메뉴-창의리더역량개발 */
+.tabstepWrap{margin:0 0 30px 0;}
+.tabstepWrap li{font-size:15px;width:100%;}
+.tabstepWrap li a{padding:8px 0;text-align:center;}
+
+/* 설립목적 및 연혁 */
+.historyBox li{width:98%;}
+
+/* C-School ****************************************************************/
+/* 교과목 - ci 적용박스 */
+.colorBox dl{float:none;width:100%;margin:0 0 15px 0;}
+
+/* ACE ****************************************************************/
+/* 개인역량 - step1 */
+.step1Title li.level{float:none;width:99%;border:1px solid #00adcb;background:none;}
+.step1Title li.level p{padding:10px 0 10px 0;font-size:20px;text-align:center;}
+.step1Title li.levelCon{float:none;width:100%;background:#00adcb;}
+.step1Title li.levelCon p{font-size:20px;}
+.step1Title li.levelCon p.con1{padding:10px 10px 10px 15px;}
+.step1Title li.levelCon p.con2{padding:10px 5px 10px 15px;}
+
+/* 개인역량 - step2 */
+.step2Title li.level{float:none;width:99%;border:1px solid #b7d235;background:none;}
+.step2Title li.level p{padding:10px 0 10px 0;font-size:20px;text-align:center;}
+.step2Title li.levelCon{float:none;width:100%;background:#b7d235;}
+.step2Title li.levelCon p{font-size:20px;}
+.step2Title li.levelCon p.con1{padding:10px 10px 10px 15px;}
+.step2Title li.levelCon p.con2{padding:10px 5px 10px 15px;}
+
+/* 개인역량 - step3 */
+.step3Title li.level{float:none;width:99%;border:1px solid #6b489d;background:none;}
+.step3Title li.level p{padding:10px 0 10px 0;font-size:20px;text-align:center;}
+.step3Title li.levelCon{float:none;width:100%;background:#6b489d;}
+.step3Title li.levelCon p{font-size:20px;}
+.step3Title li.levelCon p.con1{padding:10px 10px 10px 15px;}
+.step3Title li.levelCon p.con2{padding:10px 5px 10px 15px;}
+
+/* 개인역량 - 콘텐츠 */
+.stepCon1 th{display:block;width:100%;}
+.stepCon1 td{display:block;width:100%;margin-top:40px;}
+
+.stepCon2 th{display:block;width:100%;}
+.stepCon2 th .txt{padding:5px 0 30px 0;}
+.stepCon2 td{display:block;width:100%;text-align:center;}
+
+/* I-School - 동영상박스 */
+.ischoolMovie iframe{height:350px;}
+
+/* 로그인 */
+.loginWrap .login_fs {padding:50px 20px 50px 60px;}
+.loginWrap .login_fs .login_id{left:60px;}
+.loginWrap .login_fs .login_pw{left:60px;}
+.loginWrap .login_fs .frm_input{margin:0 0 6px 85px;width:45%;}
+.loginWrap .login_fs .btn_submit{top:50px;right:60px;width:100px;}
+
+.loginWrap .loginTxt dt{width:60%;}
+.loginWrap .loginTxt dd{width:40%;}
+.loginWrap .loginTxt dd a.btnGray{width:160px;}
+
+}
+
+@media only screen and (max-width :450px) {
+/* 타이틀 */
+h3.title{font-size:28px;line-height:30px;padding:0 0 30px 0;}
+h5.titDepth2 p{font-size:17px;line-height:18px;}
+
+/* 성균효과성 프로그램 박스 */
+.promainBox li{margin:0 0 5px 0;}
+.promainBox .num{float:left;width:15%;font-size:22px;padding:0 0 0 0;min-height:62px;line-height:60px;}
+.promainBox .txt{float:left;width:80%;font-size:14px;line-height:16px;padding:15px 0 0 10px;min-height:45px;}
+
+/* I-School - 동영상박스 */
+.ischoolMovie iframe{height:300px;}
+
+/* 로그인 */
+.loginWrap .login_fs {padding:40px 20px 100px 40px;}
+.loginWrap .login_fs .login_id{top:47px;left:40px;}
+.loginWrap .login_fs .login_pw{top:88px;left:40px;}
+.loginWrap .login_fs .frm_input{margin:0 0 6px 85px;width:63%;}
+.loginWrap .login_fs .btn_submit{top:130px;left:40px;width:75%;height:50px;}
+
+.loginWrap .loginTxt dt{float:none;width:100%;}
+.loginWrap .loginTxt dd{float:none;width:100%;text-align:left;}
+.loginWrap .loginTxt dd a.btnGray{width:160px;padding:10px 0;margin:10px 0 10px 0;}
+}
+
+@media only screen and (max-width :400px) {
+	
+}

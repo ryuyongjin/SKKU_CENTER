@@ -116,6 +116,58 @@ public class Board implements Serializable {
 	private String ntceBgndeView = "";
 	
 	/**
+	 * 이메일
+	 */
+	private String email = "";
+	
+	/**
+	 * 학번
+	 */
+	private String schoolNo = "";
+	
+	/**
+	 * 학과
+	 */
+	private String major = "";
+	
+	/**
+	 * 연락처
+	 */
+	private String phone = "";
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSchoolNo() {
+		return schoolNo;
+	}
+
+	public void setSchoolNo(String schoolNo) {
+		this.schoolNo = schoolNo;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	/**
 	 * atchFileId attribute를 리턴한다.
 	 * @return the atchFileId
 	 */
