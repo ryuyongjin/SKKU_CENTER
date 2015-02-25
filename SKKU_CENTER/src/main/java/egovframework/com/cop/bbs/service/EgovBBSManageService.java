@@ -1,5 +1,6 @@
 package egovframework.com.cop.bbs.service;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -88,5 +89,12 @@ public interface EgovBBSManageService {
      * @throws Exception
      */
     public String getPasswordInf(Board Board) throws Exception;
+    
+    /**
+     * 상담예약 목록을 조회한다(캘린더용).
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public List<BoardVO> selectResvList(BoardVO boardVO) throws Exception;
 
 }

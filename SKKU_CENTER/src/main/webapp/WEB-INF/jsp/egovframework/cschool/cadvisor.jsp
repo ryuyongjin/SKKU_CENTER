@@ -70,6 +70,13 @@
 		 multi_selector.addElement( document.getElementById( 'egovComFileUploader' ) );
 	</c:if>
 	}
+	
+	<% // 캘린더에서 선택된 일자 셋팅 %>
+	function setDate(date,time,dateHan) {
+		$("#resvDateHan").val(dateHan);
+		$("#resvDate").val(date);
+		$("#resvTime").val(time);
+	}
 </script>
 </head>
 
@@ -162,7 +169,10 @@
                         </tr>
                         <tr>
                             <th scope="row">상담일예약</th>
-                            <td colspan="3"><a href="#none" onClick="window.open('/cschool/calendar.do','캘린더보기','width=500,height=550,scrollbars=yes,left=150,top=100')" class="btnBlues">상담일예약</a></td>
+                            <td colspan="3">
+                            	<input type="hidden" name="resvDate" id="resvDate" value="">
+                            	<input type="hidden" name="resvTime" id="resvTime" value="">
+                            	<input type="text" name="resvDateHan" id="resvDateHan" style="padding-left:5px; width:180px;" value=""> <a href="#none" onClick="window.open('/cschool/calendar.do','캘린더보기','width=900,height=900,scrollbars=yes,left=150,top=100')" class="btnBlues">상담일예약</a></td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="wr_content">상담내용</label></th>

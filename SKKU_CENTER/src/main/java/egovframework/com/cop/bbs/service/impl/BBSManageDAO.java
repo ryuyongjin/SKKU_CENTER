@@ -35,10 +35,10 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void insertBoardArticle(Board board) throws Exception {
-	//long nttId = (Long)select("BBSManageDAO.selectMaxNttId");//2011.09.22
-	//board.setNttId(nttId);//2011.09.22
-	
-	insert("BBSManageDAO.insertBoardArticle", board);
+		//long nttId = (Long)select("BBSManageDAO.selectMaxNttId");//2011.09.22
+		//board.setNttId(nttId);//2011.09.22
+		
+		insert("BBSManageDAO.insertBoardArticle", board);
     }
 
     /**
@@ -48,24 +48,24 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public long replyBoardArticle(Board board) throws Exception {
-	long nttId = (Long)select("BBSManageDAO.selectMaxNttId");
-	board.setNttId(nttId);
+		long nttId = (Long)select("BBSManageDAO.selectMaxNttId");
+		board.setNttId(nttId);
+		
+		insert("BBSManageDAO.replyBoardArticle", board);
 	
-	insert("BBSManageDAO.replyBoardArticle", board);
-
-	//----------------------------------------------------------
-	// 현재 글 이후 게시물에 대한 NTT_NO를 증가 (정렬을 추가하기 위해)
-	//----------------------------------------------------------
-	//String parentId = board.getParnts();
-	long nttNo = (Long)select("BBSManageDAO.getParentNttNo", board);
-
-	board.setNttNo(nttNo);
-	update("BBSManageDAO.updateOtherNttNo", board);
-
-	board.setNttNo(nttNo + 1);
-	update("BBSManageDAO.updateNttNo", board);
-
-	return nttId;
+		//----------------------------------------------------------
+		// 현재 글 이후 게시물에 대한 NTT_NO를 증가 (정렬을 추가하기 위해)
+		//----------------------------------------------------------
+		//String parentId = board.getParnts();
+		long nttNo = (Long)select("BBSManageDAO.getParentNttNo", board);
+	
+		board.setNttNo(nttNo);
+		update("BBSManageDAO.updateOtherNttNo", board);
+	
+		board.setNttNo(nttNo + 1);
+		update("BBSManageDAO.updateNttNo", board);
+	
+		return nttId;
     }
 	
     /**
@@ -76,7 +76,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public BoardVO selectBoardArticle(BoardVO boardVO) throws Exception {
-	return (BoardVO)select("BBSManageDAO.selectBoardArticle", boardVO);
+    	return (BoardVO)select("BBSManageDAO.selectBoardArticle", boardVO);
     }
 
     /**
@@ -88,7 +88,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      */
     @SuppressWarnings("unchecked")
     public List<BoardVO> selectBoardArticleList(BoardVO boardVO) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
+    	return (List<BoardVO>) list("BBSManageDAO.selectBoardArticleList", boardVO);
     }
 
     /**
@@ -99,7 +99,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public int selectBoardArticleListCnt(BoardVO boardVO) throws Exception {
-	return (Integer)select("BBSManageDAO.selectBoardArticleListCnt", boardVO);
+    	return (Integer)select("BBSManageDAO.selectBoardArticleListCnt", boardVO);
     }
 
     /**
@@ -109,7 +109,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void updateBoardArticle(Board board) throws Exception {
-	update("BBSManageDAO.updateBoardArticle", board);
+    	update("BBSManageDAO.updateBoardArticle", board);
     }
 
     /**
@@ -119,7 +119,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void deleteBoardArticle(Board board) throws Exception {
-	update("BBSManageDAO.deleteBoardArticle", board);
+    	update("BBSManageDAO.deleteBoardArticle", board);
     }
 
     /**
@@ -129,7 +129,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void updateInqireCo(BoardVO boardVO) throws Exception {
-	update("BBSManageDAO.updateInqireCo", boardVO);
+    	update("BBSManageDAO.updateInqireCo", boardVO);
     }
 
     /**
@@ -140,7 +140,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public int selectMaxInqireCo(BoardVO boardVO) throws Exception {
-	return (Integer)select("BBSManageDAO.selectMaxInqireCo", boardVO);
+    	return (Integer)select("BBSManageDAO.selectMaxInqireCo", boardVO);
     }
 
     /**
@@ -152,7 +152,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      */
     @SuppressWarnings("unchecked")
     public List<BoardVO> selectNoticeListForSort(Board board) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectNoticeListForSort", board);
+    	return (List<BoardVO>) list("BBSManageDAO.selectNoticeListForSort", board);
     }
 
     /**
@@ -162,12 +162,12 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void updateSortOrder(List<BoardVO> sortList) throws Exception {
-	BoardVO vo;
-	Iterator<BoardVO> iter = sortList.iterator();
-	while (iter.hasNext()) {
-	    vo = (BoardVO)iter.next();
-	    update("BBSManageDAO.updateSortOrder", vo);
-	}
+		BoardVO vo;
+		Iterator<BoardVO> iter = sortList.iterator();
+		while (iter.hasNext()) {
+		    vo = (BoardVO)iter.next();
+		    update("BBSManageDAO.updateSortOrder", vo);
+		}
     }
 
     /**
@@ -178,7 +178,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public long selectNoticeItemForSort(Board board) throws Exception {
-	return (Long)select("BBSManageDAO.selectNoticeItemForSort", board);
+    	return (Long)select("BBSManageDAO.selectNoticeItemForSort", board);
     }
 
     /**
@@ -190,7 +190,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      */
     @SuppressWarnings("unchecked")
     public List<BoardVO> selectGuestList(BoardVO boardVO) throws Exception {
-	return (List<BoardVO>) list("BBSManageDAO.selectGuestList", boardVO);
+    	return (List<BoardVO>) list("BBSManageDAO.selectGuestList", boardVO);
     }
 
     /**
@@ -201,7 +201,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public int selectGuestListCnt(BoardVO boardVO) throws Exception {
-	return (Integer)select("BBSManageDAO.selectGuestListCnt", boardVO);
+    	return (Integer)select("BBSManageDAO.selectGuestListCnt", boardVO);
     }
 
     /**
@@ -211,7 +211,7 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public void deleteGuestList(BoardVO boardVO) throws Exception {
-	update("BBSManageDAO.deleteGuestList", boardVO);
+    	update("BBSManageDAO.deleteGuestList", boardVO);
     }
 
     /**
@@ -222,6 +222,19 @@ public class BBSManageDAO extends EgovComAbstractDAO {
      * @throws Exception
      */
     public String getPasswordInf(Board board) throws Exception {
-	return (String)select("BBSManageDAO.getPasswordInf", board);
+    	return (String)select("BBSManageDAO.getPasswordInf", board);
     }
+    
+    /**
+     * 상담신청 내역을 조회한다.
+     * 
+     * @param boardVO
+     * @return
+     * @throws Exception
+     */
+    @SuppressWarnings("unchecked")
+    public List<BoardVO> selectResvList(BoardVO boardVO) throws Exception {
+    	return (List<BoardVO>) list("BBSManageDAO.selectResvList", boardVO);
+    }
+    
 }

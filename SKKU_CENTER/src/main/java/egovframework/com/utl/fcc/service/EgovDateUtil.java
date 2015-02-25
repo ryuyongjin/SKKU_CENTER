@@ -861,5 +861,268 @@ public class EgovDateUtil {
 
 		return timeStr;
 	}
+	
+	/**
+	 * 일자로 그 주 일 배열로 리턴
+	 * @param sDate
+	 * @return
+	 */
+	public static String[] weekCalendar(String yyyymmdd, String div) throws Exception {
+
+		Calendar cal = Calendar.getInstance();
+		
+		int toYear = 0;
+		int toMonth = 0;
+		int toDay = 0;
+		if (yyyymmdd == null || yyyymmdd.equals("")) { // 파라메타값이 없을경우 오늘날짜
+			toYear = cal.get(cal.YEAR);
+			toMonth = cal.get(cal.MONTH) + 1;
+			toDay = cal.get(cal.DAY_OF_MONTH);
+
+			int yoil = cal.get(cal.DAY_OF_WEEK); // 요일나오게하기(숫자로)
+
+			if (yoil != 1) { // 해당요일이 일요일이 아닌경우
+				yoil = yoil - 2;
+			} else { // 해당요일이 일요일인경우
+				yoil = 7;
+			}
+			cal.set(toYear, toMonth - 1, toDay - yoil); // 해당주월요일로 세팅
+		} else {
+			int yy = Integer.parseInt(yyyymmdd.substring(0, 4));
+			int mm = Integer.parseInt(yyyymmdd.substring(4, 6)) - 1;
+			int dd = Integer.parseInt(yyyymmdd.substring(6, 8));
+			cal.set(yy, mm, dd);
+		}
+		String[] arrYMD = new String[7];
+
+		int inYear = cal.get(cal.YEAR);
+		int inMonth = cal.get(cal.MONTH);
+		int inDay = cal.get(cal.DAY_OF_MONTH);
+
+		for (int i = 0; i < 7; i++) {
+			cal.set(inYear, inMonth, inDay + i); //
+			String y = Integer.toString(cal.get(cal.YEAR));
+			String m = Integer.toString(cal.get(cal.MONTH) + 1);
+			String d = Integer.toString(cal.get(cal.DAY_OF_MONTH));
+			int w = cal.get(cal.DAY_OF_WEEK);
+			
+			if (d.length() == 1)
+				d = "0" + d;
+			
+			if(div.equals("A")) {
+				if (m.length() == 1)
+					m = "0" + m;
+				
+				arrYMD[i] = y + m + d;
+			} else if(div.equals("B")) {
+				arrYMD[i] = y + "년" + m + "월" + d + "일" + "(" + dayOfWeekHangul(w) + ")";
+			} else {
+				arrYMD[i] = m + "." + d + "(" + dayOfWeekHangul(w) + ")";
+				
+				
+			}
+			System.out.println(arrYMD[i]);
+		}
+
+		return arrYMD;
+	}
+	
+	/**
+     * 월의 해당 주의 날짜 배열을 얻어온다.
+     * @param yyyymm
+     * @param weekSeq
+     * @param retType 반환 타입
+     * @return
+     */
+    public static String[] getRangeDateOfWeek(String yyyymm, int weekSeq, String retType) {
+        int rangeDateOfWeek [] = new int[7];
+        String dayOfWeekArr[] = new String[7];
+        String week[] = {"월","화","수","목","금","토","일"};        
+        String year = yyyymm.substring(0,4);
+        String month = yyyymm.substring(4, 6);
+         
+        int startDayOfWeek = dayOfWeek(year, month, "1");	// 시작일자의 요일 리턴 
+         
+        if( startDayOfWeek == 0 || weekSeq > 1 ){ // 첫날이 월요일이거나 주차가 1주차보다 크다.
+            Calendar cal = converterDate(yyyymm+"01");
+            
+            String cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());
+            int lastDateOfMonth = getLastDateOfMonth(cYyyyMM);	// 해당월의 마지막 일
+             
+            int startDate = 1 + ((weekSeq-1)*7) - startDayOfWeek;	// 1 + 7 - 0 // 8
+            
+            for( int i=0; i<7; i++ ){
+                if( startDate > lastDateOfMonth ){
+                    // 다음달로 이동
+                	startDate = 1;
+                    cal.add(Calendar.MONTH, 1);
+                    cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());
+                }
+                
+                String day = Integer.toString(startDate);
+                
+                if(day.length() == 1)
+            		day = "0" + day;
+                
+                if(retType.equals("A")) {	// yyyymmdd
+            		dayOfWeekArr[i] = cYyyyMM.substring(0,4) + cYyyyMM.substring(4,6) + day;
+            	} else if(retType.equals("B")) { // yyyy년mm월dd일
+            		dayOfWeekArr[i] = cYyyyMM.substring(0,4) + "년 " +  cYyyyMM.substring(4,6) + "월 " + day + "일";
+            	} else {	// 
+            		dayOfWeekArr[i] =  cYyyyMM.substring(4,6) + "." + day + "(" + week[i] + ")";
+            	}
+                
+                startDate++;
+            }
+        }else{ // 1주차에 일요일이 아니다.
+        	
+            Calendar cal = converterDate(yyyymm+"01");
+            cal.add(Calendar.MONTH, -1);
+            
+            String cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());
+            int lastDateOfBeforeMonth = getLastDateOfMonth(cYyyyMM);
+             
+            int startDate = (lastDateOfBeforeMonth + 1) - startDayOfWeek;
+            for( int i=0; i<7; i++ ){
+                if( startDate > lastDateOfBeforeMonth ){
+                    startDate = 1;
+                 // 다음달로 이동
+                	startDate = 1;
+                    cal.add(Calendar.MONTH, 1);
+                    cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());
+                }
+                
+                String day = Integer.toString(startDate);
+                
+                if(day.length() == 1)
+            		day = "0" + day;
+                
+                if(retType.equals("A")) {	// yyyymmdd
+            		dayOfWeekArr[i] = cYyyyMM.substring(0,4) + cYyyyMM.substring(4,6) + day;
+            	} else if(retType.equals("B")) { // yyyy년mm월dd일
+            		dayOfWeekArr[i] = cYyyyMM.substring(0,4) + "년 " +  cYyyyMM.substring(4,6) + "월 " + day + "일";
+            	} else {	// 
+            		dayOfWeekArr[i] =  cYyyyMM.substring(4,6) + "." + day + "(" + week[i] + ")";
+            	}
+                
+                startDate++;
+            }
+        }
+        
+        return dayOfWeekArr;
+    }
+     
+	/**
+     * 요일의 한글로 리턴
+     * 0:일요일 ~ 6:토요일
+     * @return
+     */
+    public static String dayOfWeekHangul(int dayOfWeek) {     
+         
+        String hangul = "";
+        
+        switch (dayOfWeek) {
+		case 1:
+			hangul = "일";
+			break;
+		case 2:
+			hangul = "월";
+			break;
+		case 3:
+			hangul = "화";
+			break;
+		case 4:
+			hangul = "수";
+			break;
+		case 5:
+			hangul = "목";
+			break;
+		case 6:
+			hangul = "금";
+			break;
+		case 7:
+			hangul = "토";
+			break;
+
+		default:
+			break;
+		}
+ 
+        return hangul;              
+    }
+	
+	
+    /**
+     * 특정날짜의  요일의 숫자를 리턴
+     * -1:일요일 ~ 5:토요일
+     * @return
+     */
+    public static int dayOfWeek(String sYear, String sMonth, String sDay) {     
+         
+        int iYear = Integer.parseInt(sYear);
+        int iMonth = Integer.parseInt(sMonth) - 1;
+        int isDay = Integer.parseInt(sDay);
+         
+        GregorianCalendar gc = new GregorianCalendar(iYear, iMonth, isDay); 
+ 
+        int dayOfWeek = gc.get(gc.DAY_OF_WEEK) - 1;
+        int retDay = 0;
+        
+        if(dayOfWeek == 0) {
+        	return 6;
+        } else {
+        	return retDay - 1; 
+        }
+    }
+     
+    /**
+     * String 형식의 날자를 Calendar 로 변환 해준다.
+     * 
+     * @param yyyymmdd
+     * @return
+     */
+    public static Calendar converterDate(String yyyymmdd) {
+        Calendar cal = Calendar.getInstance(); // 양력 달력
+        if (yyyymmdd == null)
+            return cal;
+ 
+        String date = yyyymmdd.trim();
+        if (date.length() != 8) {
+            if (date.length() == 4)
+                date = date + "0101";
+            else if (date.length() == 6)
+                date = date + "01";
+            else if (date.length() > 8)
+                date = date.substring(0, 8);
+            else
+                return cal;
+        }
+ 
+        cal.set(Calendar.YEAR, Integer.parseInt(date.substring(0, 4)));
+        cal.set(Calendar.MONTH, Integer.parseInt(date.substring(4, 6)) - 1);
+        cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt(date.substring(6)));
+ 
+        return cal;
+    }
+     
+    /**
+     * 해당 월의 마지막일을 구한다.
+     * @return
+     */
+    public static int getLastDateOfMonth() {
+        return getLastDateOfMonth(new Date());
+    }
+    public static int getLastDateOfMonth(Date date) {
+        return getLastDateOfMonth(new SimpleDateFormat("yyyyMM").format(date));
+    }
+    public static int getLastDateOfMonth(String yyyymm) {
+        int year = Integer.parseInt(yyyymm.substring(0, 4));
+        int month = Integer.parseInt(yyyymm.substring(4, 6)) - 1;
+         
+        Calendar destDate = Calendar.getInstance();
+        destDate.set(year, month, 1);
+         
+        return destDate.getActualMaximum(Calendar.DATE);
+    }
 
 }

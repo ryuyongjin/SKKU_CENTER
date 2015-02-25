@@ -135,6 +135,46 @@ public class Board implements Serializable {
 	 */
 	private String phone = "";
 	
+	/**
+	 * 예약일시
+	 */
+	private String resvDate = "";
+	
+	/**
+	 * 예약일자
+	 */
+	private String resvTime = "";
+	
+	/**
+	 * 예약상태
+	 */
+	private String status = "";
+	
+	
+	public String getResvTime() {
+		return resvTime;
+	}
+	
+	public void setResvTime(String resvTime) {
+		this.resvTime = resvTime;
+	}
+	
+	public String getResvDate() {
+		return resvDate;
+	}
+
+	public void setResvDate(String resvDate) {
+		this.resvDate = resvDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getPhone() {
 		return phone;
 	}

@@ -1,7 +1,4 @@
 @charset "utf-8";
-
-
-
 /******************************************** common css ********************************************/
 
 
@@ -27,12 +24,21 @@
 
 #admin_container .admin_content{margin-left:200px;padding:25px 50px 0 40px;min-height:400px;}
 
+/******************************************** main wrap ********************************************/
+.admin_content .main_wrap{overflow:hidden;margin-bottom:50px;}
+.admin_content .main_wrap dd{float:left;width:45%;margin-right:50px;}
 
+.admin_content .main_wrap .board{position:relative;}
+.admin_content .main_wrap .board h4{color:#000;font-size:24px;font-family:'NanumGothicBold';font-weight:normal;padding:0 0 5px 0;margin:0 0 20px 0;border-bottom:1px solid #ccc;}
+.admin_content .main_wrap .board .more{position:absolute;top:5px;right:0;color:#999;}
+.admin_content .main_wrap .board ul{}
+.admin_content .main_wrap .board li{padding:4px 0;font-size:13px;}
+.admin_content .main_wrap .board li span{font-size:12px;padding-right:15px;color:#999;}
+
+.admin_content .main_wrap .member{border:1px solid #ddd;background:#f9f9f9;font-size:20px;padding:25px 0;}
+.admin_content .main_wrap .member p{font-size:20px;padding:5px 0;text-align:center;}
 
 /******************************************** sub wrap ********************************************/
-
-
-
 /* 도서등록 - 상단 카테고리 */
 .cate_listtop{overflow:hidden;border:1px solid #e4e3e2;}
 .cate_listtop dt{float:left;width:15%;padding:10px 0 0 20px;color:#000;font-size:16px;font-family:'NanumGothicBold';}
@@ -41,7 +47,6 @@
 .cate_listtop dd p{font-size:11px;}
 .cate_list{border:1px solid #e4e3e2;padding:10px 20px;background:#f5f5f5;margin:10px 0 30px 0;}
 .cate_list a.btnBlack{height:110px;line-height:110px;margin-left:20px;}
-
 
 /* faq */
 .faqWrap {border-top:1px solid #6b6b6b;border-bottom:1px solid #e9e9e9;}

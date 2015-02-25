@@ -344,6 +344,11 @@ public class EgovBBSManageController {
 		LoginVO user = (LoginVO)EgovUserDetailsHelper.getAuthenticatedUser();
 		Boolean isAuthenticated = EgovUserDetailsHelper.isAuthenticated();
 	
+		
+		if(boardVO.getBbsId().equals("BBSMSTR_000000000021")) { // 상담예약게시판
+			// TODO 상담일시 중복 체크
+		}
+		
 		beanValidator.validate(board, bindingResult);
 		if (bindingResult.hasErrors()) {
 	
@@ -394,15 +399,14 @@ public class EgovBBSManageController {
 		    board.setNttCn(unscript(board.getNttCn()));	// XSS 방지
 		    
 		    bbsMngService.insertBoardArticle(board);
+		    
+		    if(boardVO.getBbsId().equals("BBSMSTR_000000000021")) { // 상담예약게시판
+				model.addAttribute("msg", "상담신청이 완료되었습니다.");
+				return "forward:/cschool/cadvisor.do";
+			}
 		}
-
-		if(boardVO.getBbsId().equals("BBSMSTR_000000000021")) { // 상담예약게시판
-			model.addAttribute("msg", "상담신청이 완료되었습니다.");
-			return "forward:/cschool/cadvisor.do";
-		} else {
-			//status.setComplete();
-			return "forward:/cop/bbs/selectBoardList.do";
-		}
+		
+		return "forward:/cop/bbs/selectBoardList.do";
     }
 
     /**

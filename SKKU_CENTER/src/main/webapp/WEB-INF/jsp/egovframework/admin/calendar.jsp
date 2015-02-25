@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<%@ include file="/admin/include/admin_head.jsp" %>
+<%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_head.jsp" %>
 </head>
 
 <body>

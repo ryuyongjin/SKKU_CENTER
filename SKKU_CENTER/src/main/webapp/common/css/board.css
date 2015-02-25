@@ -89,15 +89,24 @@ table tr .etc{width:10%;}
 .boardList td:first-child{border-left:0;}
 .boardList tbody th{padding:10px 0;background:#f9f9f9;border-bottom:1px solid #e3e3e3;color:#000;}
 
-/* 상담캘린더 */
-.boardList .ca_counIng{background:#00adcb;color:#fff;font-family:'NanumGothicBold';} /* 신청중 */
-.boardList .ca_counIng a{color:#fff;}
-.boardList .ca_reserveEnd{background:#eee;color:#00adcb;font-family:'NanumGothicBold';} /* 예약완료 */
-.boardList .ca_reserveEnd a{color:#00adcb;}
-.boardList .ca_counEnd{background:#f9f9f9;color:#999;} /* 상담완료 */
-.boardList .ca_counEnd a{color:#999;}
-.boardList .ca_reserveIng{background:#f9f9f9;color:#a5c900;font-family:'NanumGothicBold';} /* 예약보류 */
-.boardList .ca_reserveIng a{color:#a5c900;}
+/* 상담캘린더 게시판 */
+.calenderList{}
+.calenderList table{width:100%;border-top:2px solid #000;border-left:1px solid #e3e3e3;}
+.calenderList thead th{padding:10px 0;background:#ccc;border-left:1px solid #e3e3e3;border-bottom:1px solid #000;color:#000;text-align:center;font-size:13px;}
+.calenderList td{border-left:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;text-align:center;font-size:13px;height:50px;}
+.calenderList tbody th{background:#f9f9f9;border-bottom:1px solid #e3e3e3;color:#000;font-size:13px;height:50px;}
+
+.calenderList .ca_counIng{background:#00adcb;color:#fff;font-family:'NanumGothicBold';} /* 신청중 */
+.calenderList .ca_counIng a{color:#fff;}
+.calenderList .ca_reserveEnd{background:#eee;color:#00adcb;font-family:'NanumGothicBold';} /* 예약완료 */
+.calenderList .ca_reserveEnd a{color:#00adcb;}
+.calenderList .ca_counEnd{background:#fff;color:#000;} /* 상담완료 */
+.calenderList .ca_counEnd a{color:#000;}
+.calenderList .ca_reserveIng{background:#a5c900;color:#fff;font-family:'NanumGothicBold';} /* 예약보류 */
+.calenderList .ca_reserveIng a{color:#fff;}
+.calenderList .ca_gray{background:#eee;}
+.calenderList .ca_choose{background:#000;}
+.calenderList .ca_choosed{background:#00adcb;}
 
 /* 썸네일 게시판 */
 .thumbList{width:100%;border-top:2px solid #000;}
@@ -264,6 +273,7 @@ table tbody td.subject{border-left:0;}
 .pagingMb{margin-top:10px !important;}
 
 /* 폼 테이블 */
+.writeType1 table{width:200%;}
 .writeType1 th{display:block;width:100%;padding:10px 0 0 10px;border-bottom:0;background:none;}
 .writeType1 td{display:block;width:100%;padding:5px 0 10px 0;}
 

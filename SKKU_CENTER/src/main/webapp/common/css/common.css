@@ -53,7 +53,7 @@ article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, s
 
 
 /******************************************** common ********************************************/
-.popWrap{width:90%;margin:15px auto;}
+.popWrap{width:90%;margin:0 auto; padding:15px 0;}
 .popWrap h2{color:#000;font-size:22px;font-family:NanumGothicBold;font-weight:normal;margin:0 0 10px 0;}
 
 
@@ -225,6 +225,7 @@ article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, s
 .font12 {font-size:12px !important;}
 .font14 {font-size:14px !important;}
 .font15 {font-size:15px !important;}
+.font15black {font-size:15px !important;color:#000;font-family:'NanumGothicBold';}
 .font16 {font-size:16px !important;}
 .font18 {font-size:18px !important;}
 .font18black {font-size:18px !important;color:#000;font-family:'NanumGothicBold';}

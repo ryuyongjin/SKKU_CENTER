@@ -70,14 +70,14 @@
                 
                 <ul class="bannerList">
                 	<li>
-                    	<a href="/">
+                    	<a href="/cschool/course01.do">
                             <div class="ico"><img src="./images/main/ico_cschool01.png" alt="" ></div>
                             <p>교육과정</p>
                             <span>학생중심 창의융합형 교육과정 운영</span>
                         </a>
                     </li>
                     <li>
-                    	<a href="/">
+                    	<a href="/cschool/coffice.do">
                             <div class="ico"><img src="./images/main/ico_cschool02.png" alt="" ></div>
                             <p>C-Office</p>
                             <span>맞춤형 교육정보 제공 및 경력 개발 지원</span>
@@ -85,7 +85,7 @@
                     </li>
                 </ul>
                 <div class="bannerBtn">
-                	<a href="/">
+                	<a href="/cschool/cadvisor.do">
 	                    <div class="ico"><img src="./images/main/ico_cschool03.png" alt="" ></div>
                         <p>C-advisor 상담 예약<img src="./images/main/btn_squire_arrow1.gif" alt="" ></p>
                         <span>CI인증 / C-School 상담요청</span>                        
@@ -106,21 +106,21 @@
                 
                 <ul class="bannerList">
                 	<li>
-                    	<a href="/">
+                    	<a href="/ace/step_main.do">
                             <div class="ico"><img src="./images/main/ico_ace01.png" alt="" ></div>
                             <p>창의리더 역량개발</p>
                             <span>성균 핵심인재 양성을 위한 비교과 프로그램</span>
                         </a>
                     </li>
                     <li>
-                    	<a href="/">
+                    	<a href="/ace/pro_main.do">
                             <div class="ico"><img src="./images/main/ico_ace02.png" alt="" ></div>
                             <p>효과성 프로그램</p>
                             <span>대학교육의 질적 향상을 위한 연구 및 분석</span>
                         </a>
                     </li>
                     <li>
-                    	<a href="/">
+                    	<a href="/ace/global_challenger.do#none">
                             <div class="ico"><img src="./images/main/ico_ace03.png" alt="" ></div>
                             <p>ACE 모델 공유·확산</p>
                             <span>프로그램 지원 및 타대학과의 공유</span>

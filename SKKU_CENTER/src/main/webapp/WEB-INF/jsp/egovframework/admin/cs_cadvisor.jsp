@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<%@ include file="/admin/include/admin_head.jsp" %>
+<%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_head.jsp" %>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     
     
     <!-- header -->
-    <%@ include file="/admin/include/admin_header.jsp" %>
+    <%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_header.jsp" %>
     <!-- //header -->
     
     
@@ -64,7 +64,7 @@
                 
                 <!-- 버튼 start -->
                 <div class="btnWrap ar">
-                	<a href="./calendar.jsp" class="btnGreen">캘린더보기</a>
+                	<a href="./calendar.do" class="btnGreen">캘린더보기</a>
                 </div>
                 <!-- //버튼 end -->
                 
@@ -204,7 +204,7 @@
         <!-- //본문내용 ---------------------------------------------------------------------------------------------------------------------------------------------------->
         
     <!-- footer -->
-    <%@ include file="/admin/include/admin_footer.jsp" %>
+    <%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_footer.jsp" %>
     <!-- //footer -->
     
     

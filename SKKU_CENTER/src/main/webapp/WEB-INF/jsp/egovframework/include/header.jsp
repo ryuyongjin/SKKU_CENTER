@@ -20,7 +20,7 @@
     <!-- 네비게이션 -->
     <div class="gnbWrap">
     
-    <h1><a href="/" title="메인페이지로 이동"><img src="/images/common/logo.gif" alt="성균관대학교 대학교육혁신센터"></a></h1>
+    <h1><a href="/" title="메인페이지로 이동"><img src="/images/common/logo.png" alt="성균관대학교 대학교육혁신센터"></a></h1>
    
     <div class="gnb">        
         <ul>

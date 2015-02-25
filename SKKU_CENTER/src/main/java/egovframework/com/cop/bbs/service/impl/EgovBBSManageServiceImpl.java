@@ -199,4 +199,13 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
     public String getPasswordInf(Board board) throws Exception {
 	return bbsMngDAO.getPasswordInf(board);
     }
+    
+    /**
+     * 상담예약 목록을 조회한다(캘린더용).
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public List<BoardVO> selectResvList(BoardVO boardVO) throws Exception {
+		return bbsMngDAO.selectResvList(boardVO);
+    }
 }
