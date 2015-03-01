@@ -15,12 +15,19 @@
         
         <li class="sn3"><a href="/cschool/cadvisor.do">C-Advisor 상담예약</a></li>
         <li class="sn4"><a href="/cschool/coffice.do">C-Office 소개</a></li>
-        
+                
         <li class="sn5 none"><a href="#none">커뮤니티</a></li>
+        <li class="snThird1 sub"><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+        <li class="snThird2 sub"><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+        <li class="snThird3 sub"><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+        <li class="snThird4 sub"><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+        <li class="snThird5 sub"><a href="javascript:alert('내용준비중입니다.');">Q&amp;A</a></li>
+        <!-- 20150226 준비중         
         <li class="snThird1 sub"><a href="/cschool/news.do">NEWS</a></li>
         <li class="snThird2 sub"><a href="/cschool/student.do">학생소감</a></li>
         <li class="snThird3 sub"><a href="/cschool/gallery.do">갤러리</a></li>
         <li class="snThird4 sub"><a href="/cschool/faq.do">FAQ</a></li>
         <li class="snThird5 sub"><a href="/cschool/qa.do">Q&amp;A</a></li>
+        -->
     </ul>
 </div>

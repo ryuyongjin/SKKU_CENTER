@@ -83,6 +83,10 @@
                 
                 
                 
+                
+                
+                
+                <!-- 20150226 준비중 
                 <h4 class="titDepth1">
                     <p>글로벌 창조적 챌린저의 도전 이야기</p>
                 </h4>
@@ -92,13 +96,7 @@
                     <li>프로그램을 이수할 경우 창의품 또는 창의심화탐구(3학점)가 인정됩니다.</li>
                 </ul>
                 
-                
-                
-                
-                
-                
-                
-                <!-- 탭메뉴 -->
+
                 <div class="tabWrap mt40">
                     <ul>
                         <li><a href="/" class="on">전체</a></li>
@@ -108,11 +106,9 @@
                         <li><a href="/">2017</a></li>
                     </ul>
                 </div>
-                <!-- //탭메뉴 -->
+             
                 
-                
-                
-                <!-- 챌린저 게시판 -->
+
                 <div class="challengerList">
                 
                 <ul>
@@ -233,14 +229,10 @@
                     
 
                 </ul>
-                
-                
                 </div>
-                <!-- //챌린저 게시판 -->
                 
                 
-                
-                <!-- PC용 페이징 start -->
+
                 <div class="paging">
                     <a href="/" class="first"><img src="../images/common/btn_first.gif" alt="처음" /></a>
                     <a href="/" class="prev"><img src="../images/common/btn_prev.gif" alt="이전" /></a>
@@ -257,14 +249,15 @@
                     <a href="/" class="next"><img src="../images/common/btn_next.gif" alt="다음" /></a>
                     <a href="/" class="end"><img src="../images/common/btn_end.gif" alt="끝" /></a>
 		        </div>
-                <!-- //PC용 페이징 end -->
-                
-                <!-- 모바일용 페이징 start -->
+
                 <div class="pagingMb">
                 	<a href="#prev" class="prev">이전</a>
                 	<a href="/" class="next">다음</a>
                 </div> 
-                <!-- //모바일용 페이징 end -->
+                
+                
+                -->
+
                 
                 
                 

@@ -24,10 +24,17 @@
         <li class="snThird7 sub"><a href="/ace/help_desk.do">ACE Help Desk</a></li>
         
         <li class="sn4 none"><a href="#none">커뮤니티</a></li>
+        <li class="snFourth1 sub"><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+        <li class="snFourth2 sub"><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+        <li class="snFourth3 sub"><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+        <li class="snFourth4 sub"><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+        <li class="snFourth5 sub"><a href="javascript:alert('내용준비중입니다.');">Q&amp;A</a></li>
+        <!-- 20150226 준비중
         <li class="snFourth1 sub"><a href="/ace/news.do">NEWS</a></li>
         <li class="snFourth2 sub"><a href="/ace/student.do">학생소감</a></li>
         <li class="snFourth3 sub"><a href="/ace/gallery.do">갤러리</a></li>
         <li class="snFourth4 sub"><a href="/ace/faq.do">FAQ</a></li>
         <li class="snFourth5 sub"><a href="/ace/qa.do">Q&amp;A</a></li>
+        -->
     </ul>
 </div>

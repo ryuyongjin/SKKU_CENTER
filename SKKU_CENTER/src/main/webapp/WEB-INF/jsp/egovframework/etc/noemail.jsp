@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<%@ include file="/include/head.jsp" %>
+<%@ include file="/WEB-INF/jsp/egovframework/include/head.jsp" %>
 <script type="text/javascript">
     $(document).ready(function () {
         setPage({ hn: 0, sn: 5 });
@@ -16,7 +16,7 @@
 <div id="wrap">
 
 	<!-- header -->
-	<%@ include file="/include/header.jsp" %>	
+	<%@ include file="/WEB-INF/jsp/egovframework/include/header.jsp" %>	
     <!-- //header -->
 
 
@@ -37,7 +37,7 @@
     
     
     	<!-- 왼쪽메뉴 -->
-        <%@ include file="/include/lnb_etc.jsp" %>
+        <%@ include file="/WEB-INF/jsp/egovframework/include/lnb_etc.jsp" %>
 	    <!-- //왼쪽메뉴 -->
     
         <!-- 서브본문 감싸기 -->
@@ -90,7 +90,7 @@
 
 
 	<!-- footer -->
-	<%@ include file="/include/footer.jsp" %>
+	<%@ include file="/WEB-INF/jsp/egovframework/include/footer.jsp" %>
     <!-- //footer -->
     
 </div>

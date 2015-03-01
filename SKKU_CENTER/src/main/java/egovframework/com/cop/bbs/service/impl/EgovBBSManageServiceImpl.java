@@ -12,7 +12,6 @@ import egovframework.com.cop.bbs.service.Board;
 import egovframework.com.cop.bbs.service.BoardVO;
 import egovframework.com.cop.bbs.service.EgovBBSManageService;
 import egovframework.com.utl.fcc.service.EgovDateUtil;
-
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import egovframework.rte.fdl.idgnr.EgovIdGnrService;
 import egovframework.rte.fdl.property.EgovPropertyService;
@@ -46,7 +45,7 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 
     @Resource(name = "EgovFileMngService")
     private EgovFileMngService fileService;
-
+ 
     @Resource(name = "propertiesService")
     protected EgovPropertyService propertyService;
 
@@ -207,5 +206,32 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
      */
     public List<BoardVO> selectResvList(BoardVO boardVO) throws Exception {
 		return bbsMngDAO.selectResvList(boardVO);
+    }
+    
+    /**
+     * 상담예약 상세를 조회한다(캘린더용).
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public BoardVO selectResvInfo(BoardVO boardVO) throws Exception{
+    	return bbsMngDAO.selectResvInfo(boardVO);
+    }
+    
+    /**
+     * 상담 한 건의 내용을 수정 한다.
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#updateBoardArticle(egovframework.com.cop.bbs.brd.service.Board)
+     */
+    public void updateResvInfo(BoardVO boardVO) throws Exception {
+    	bbsMngDAO.updateResvInfo(boardVO);
+    }
+    
+    /**
+     * 상담예약 삭제
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public void deleteResvInfo(BoardVO boardVO) throws Exception {
+    	bbsMngDAO.deleteResvInfo(boardVO);	
     }
 }

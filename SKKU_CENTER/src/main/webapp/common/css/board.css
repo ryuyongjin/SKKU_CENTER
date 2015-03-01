@@ -105,8 +105,13 @@ table tr .etc{width:10%;}
 .calenderList .ca_reserveIng{background:#a5c900;color:#fff;font-family:'NanumGothicBold';} /* 예약보류 */
 .calenderList .ca_reserveIng a{color:#fff;}
 .calenderList .ca_gray{background:#eee;}
-.calenderList .ca_choose{background:#000;}
-.calenderList .ca_choosed{background:#00adcb;}
+.calenderList .ca_choose{background:#a5c900;cursor:pointer;}
+.calenderList .ca_choosed{background:#00adcb;cursor:pointer;}
+
+/* 상담예약 */
+.cadvisorCon{text-align:left !important;font-size:13px !important;width:100%;background:#f4f4f4;}
+.cadvisorCon span{color:#000;font-family:'NanumGothicBold';padding:0 0 0 20px;}
+.cadvisorCon p{padding-top:5px;}
 
 /* 썸네일 게시판 */
 .thumbList{width:100%;border-top:2px solid #000;}
@@ -119,7 +124,7 @@ table tr .etc{width:10%;}
 .thumbList dd .thumbCon{}
 .thumbList dd .thumbDate{font-size:11px;color:#999;padding-top:10px;}
 
-/* 폼 테이블 */
+/* 글쓰기폼 테이블 */
 .writeType1{}
 .writeType1 table {width:100%;border-top:2px solid #000;}
 .writeType1 th{padding:8px 13px;border-bottom:1px solid #e3e3e3;background:#f9f9f9;text-align:left;color:#000;}
@@ -175,7 +180,6 @@ table tr .etc{width:10%;}
 .nonTable th{padding:0;margin:0;border:0;}
 .nonTable td{padding:0;margin:0;border:0;}
 
-
 /* 게시판 버튼박스 */
 .btnWrap{margin-top:10px;}
 .btnWrap2{margin-top:10px;overflow:hidden;}
@@ -219,9 +223,6 @@ table tr .etc{width:10%;}
 .viewPrenext .preNext strong {float:left;width:75px;text-align: center;color:#6e6e6e;font-size:13px;}
 .viewPrenext .preNext a{float:left;color:#9b9b9b;font-size:13px;}
 .viewPrenext .preNext .data{float:right;width:100px;text-align:center;color:#9b9b9b;font-size:12px;}
-
-
-
 
 
 
@@ -273,7 +274,7 @@ table tbody td.subject{border-left:0;}
 .pagingMb{margin-top:10px !important;}
 
 /* 폼 테이블 */
-.writeType1 table{width:200%;}
+.writeType1 table{width:150%;}
 .writeType1 th{display:block;width:100%;padding:10px 0 0 10px;border-bottom:0;background:none;}
 .writeType1 td{display:block;width:100%;padding:5px 0 10px 0;}
 

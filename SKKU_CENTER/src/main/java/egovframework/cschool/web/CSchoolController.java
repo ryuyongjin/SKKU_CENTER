@@ -116,6 +116,8 @@ public class CSchoolController {
     	
     	Calendar cal = Calendar.getInstance();
     	
+    	cal.setFirstDayOfWeek(Calendar.MONDAY); // 한주의 시작을 월요일로
+    	
     	String year        = params.get("year");
     	String month       = params.get("month");
     	String prevWeek    = params.get("prevWeek");
@@ -135,11 +137,12 @@ public class CSchoolController {
     	String[] thisWeekHangul = null; // mm.dd(요일)
     	
     	if( year == null ) {
-        	// 현재날짜 셋팅
+        	// 현재날짜 셋팅 
     		// 현재 몇번째 주인지 조회
+    		
     		year  = cal.get(Calendar.YEAR) + "";
         	month = (cal.get(Calendar.MONTH) + 1) + ""; // 1월은 0 리턴
-        	weekOfMonth = cal.get(Calendar.WEEK_OF_MONTH) + "";
+        	weekOfMonth = Integer.toString(cal.get(Calendar.WEEK_OF_MONTH));
     	} else {
 	    	// 넘어온 값중에 다음주면 다음주 조회
 	    	// 이전주면 이전주 조회
@@ -147,16 +150,16 @@ public class CSchoolController {
     		cal.clear();
     		cal.set(Calendar.YEAR, Integer.parseInt(year));
     		cal.set(Calendar.MONTH,Integer.parseInt(month)-1);
+    		cal.set(Calendar.WEEK_OF_MONTH, Integer.parseInt(weekOfMonth));
     	}
-    	
-    	cal.set(Calendar.WEEK_OF_MONTH, Integer.parseInt(weekOfMonth));
-    	cal.set(Calendar.DAY_OF_WEEK, 2); // 월요일
     	
     	startDayOfWeek = cal.get(Calendar.DAY_OF_MONTH) + ""; // 그 주의 시작일자
     	
+    	System.out.println(" 이번 주 시작일 - " + startDayOfWeek);
+    	
     	model.addAttribute("year", year);
     	model.addAttribute("month", month);
-    	model.addAttribute("weekOfMonth", weekOfMonth);
+    	model.addAttribute("weekOfMonth", weekOfMonth);  
     	
     	
     	// 이전 주, 다음주
@@ -208,6 +211,9 @@ public class CSchoolController {
     	
     	model.addAttribute("startDay",thisWeek[0]);
     	model.addAttribute("endDay",thisWeek[6]);
+    	
+    	
+    	model.addAttribute("today", EgovDateUtil.getToday());
     	// TODO 그 주의 일자 체크 및 공휴일 체크
     	// TODO 상담불가능한 날짜 체크
     	

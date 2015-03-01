@@ -97,7 +97,7 @@ public class EgovLoginController {
 		    return "egovframework/com/cmm/egovError";
 		}
 		*/
-		return "egovframework/com/uat/uia/EgovLoginUsr";
+		return "egovframework/etc/login";
 	}
 
 	/**
@@ -117,12 +117,16 @@ public class EgovLoginController {
 
 			// 2-1. 로그인 정보를 세션에 저장
 			request.getSession().setAttribute("loginVO", resultVO);
-
-			return "redirect:/uat/uia/actionMain.do";
+			
+			if("admin".equals(resultVO.getId())) {	// 관리자라면..
+				return "redirect:/admin/main.do";
+			} else {								// 일반사용자라면..
+				return "redirect:/main.do";
+			}
 
 		} else {
 			model.addAttribute("message", egovMessageSource.getMessage("fail.common.login"));
-			return "egovframework/com/uat/uia/EgovLoginUsr";
+			return "egovframework/etc/login";
 		}
 	}
 
@@ -283,7 +287,7 @@ public class EgovLoginController {
 		request.getSession().setAttribute("loginVO", null);
 
 		//return "redirect:/egovDevIndex.jsp";
-		return "redirect:/EgovContent.do";
+		return "redirect:/index.jsp";
 	}
 
 	/**

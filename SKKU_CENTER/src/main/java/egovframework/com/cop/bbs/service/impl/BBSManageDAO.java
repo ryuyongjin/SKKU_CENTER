@@ -237,4 +237,28 @@ public class BBSManageDAO extends EgovComAbstractDAO {
     	return (List<BoardVO>) list("BBSManageDAO.selectResvList", boardVO);
     }
     
+    /**
+     * 상담신청 내역을 상세조회한다.
+     * 
+     * @param boardVO
+     * @return
+     * @throws Exception
+     */
+    public BoardVO selectResvInfo(BoardVO boardVO) throws Exception {
+    	return (BoardVO) select("BBSManageDAO.selectResvList",boardVO);
+    }
+    
+    /**
+     * 상담내용을 수정한다.
+     * 
+     * @param board
+     * @throws Exception
+     */
+    public void updateResvInfo(Board board) throws Exception {
+    	update("BBSManageDAO.updateResvInfo", board);
+    }
+
+    public void deleteResvInfo(Board boardVO) throws Exception {
+    	delete("BBSManageDAO.deleteResvInfo", boardVO);
+    }
 }

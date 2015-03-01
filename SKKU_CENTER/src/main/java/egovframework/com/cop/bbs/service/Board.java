@@ -150,6 +150,21 @@ public class Board implements Serializable {
 	 */
 	private String status = "";
 	
+	/**
+	 * 예약상태명
+	 */
+	private String statusNm = "";
+	
+	
+	public String getStatusNm() {
+		return statusNm;
+	}
+
+	public void setStatusNm(String statusNm) {
+		this.statusNm = statusNm;
+	}
+
+	
 	
 	public String getResvTime() {
 		return resvTime;

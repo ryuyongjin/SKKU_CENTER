@@ -280,6 +280,16 @@ public class EgovMberManageController {
 	@RequestMapping("/uss/umt/EgovMberSbscrbView.do")
 	public String sbscrbMberView(@ModelAttribute("userSearchVO") UserDefaultVO userSearchVO, @ModelAttribute("mberManageVO") MberManageVO mberManageVO,
 			@CommandMap Map<String, Object> commandMap, Model model) throws Exception {
+		
+		//일반회원용 약관 아이디 설정
+		String stplatId = "STPLAT_0000000000001";
+		//회원가입유형 설정-일반회원
+		String sbscrbTy = "USR01";
+		//약관정보 조회
+		List<?> stplatList = mberManageService.selectStplat(stplatId);
+		model.addAttribute("stplatList", stplatList); //약관정보 포함
+		model.addAttribute("sbscrbTy", sbscrbTy); //회원가입유형 포함
+		
 		ComDefaultCodeVO vo = new ComDefaultCodeVO();
 
 		//패스워드힌트목록을 코드정보로부터 조회
@@ -291,18 +301,12 @@ public class EgovMberManageController {
 
 		model.addAttribute("passwordHint_result", passwordHint_result); //패스워트힌트목록
 		model.addAttribute("sexdstnCode_result", sexdstnCode_result); //성별구분코드목록
-		if (!"".equals((String) commandMap.get("realname"))) {
-			model.addAttribute("mberNm", (String) commandMap.get("realname")); //실명인증된 이름 - 주민번호 인증
-			model.addAttribute("ihidnum", (String) commandMap.get("ihidnum")); //실명인증된 주민등록번호 - 주민번호 인증
-		}
-		if (!"".equals((String) commandMap.get("realName"))) {
-			model.addAttribute("mberNm", (String) commandMap.get("realName")); //실명인증된 이름 - ipin인증
-		}
-
+		
 		//mberManageVO.setGroupId("DEFAULT");
 		mberManageVO.setMberSttus("DEFAULT");
 
-		return "egovframework/com/uss/umt/EgovMberSbscrb";
+		//return "egovframework/com/uss/umt/EgovMberSbscrb";
+		return "egovframework/etc/join";
 	}
 
 	/**

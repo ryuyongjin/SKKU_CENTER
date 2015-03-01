@@ -81,8 +81,7 @@
                 </p>  
                 
                 <div class="ac mt20">
-					<img src="../images/ace/dia_creativity_zone01.gif" alt="" class="img100">
-                    
+					<img src="../images/ace/dia_creativity_zone01.gif" alt="" class="img100">                    
                     <img src="../images/ace/pic_creativity_zone03.jpg" alt="" class="img100 mt20">
                 </div>
                 
@@ -97,8 +96,7 @@
                 
                 <div class="mt20">
 					<img src="../images/ace/pic_creativity_zone04.jpg" alt="" class="img100">
-                </div>
-                
+                </div>               
                 
                 
                 
@@ -144,7 +142,7 @@
                 
                 <ul class="btnWrap2 mt40">
                 	<li>담당 : 박민서 조교(02-720-1679)</li>
-                	<li><a href="./" class="btnViewblue">창조존 대관 신청서 양식 다운로드</a></li>
+                	<li><a href="/WEB-INF/jsp/egovframework/download/Creativity_Zone_application.hwp" class="btnViewblue" target="_blank">창조존 대관 신청서 양식 다운로드</a></li>
                 </ul>
                 
                 

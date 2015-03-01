@@ -171,7 +171,7 @@
                 
                 
                 <div class="btnWrap ar">
-                	<a href="./" class="btnViewblue">ACE Help Desk 신청서 다운로드</a>
+                	<a href="/WEB-INF/jsp/egovframework/download/ACE_HelpDesk_application.hwp" class="btnViewblue" target="_blank">ACE Help Desk 신청서 다운로드</a>
                 </div>
                 
                 

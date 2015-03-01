@@ -946,7 +946,7 @@ public class EgovDateUtil {
         if( startDayOfWeek == 0 || weekSeq > 1 ){ // 첫날이 월요일이거나 주차가 1주차보다 크다.
             Calendar cal = converterDate(yyyymm+"01");
             
-            String cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());
+            String cYyyyMM = new SimpleDateFormat("yyyyMM").format(cal.getTime());    
             int lastDateOfMonth = getLastDateOfMonth(cYyyyMM);	// 해당월의 마지막 일
              
             int startDate = 1 + ((weekSeq-1)*7) - startDayOfWeek;	// 1 + 7 - 0 // 8
@@ -1066,12 +1066,11 @@ public class EgovDateUtil {
         GregorianCalendar gc = new GregorianCalendar(iYear, iMonth, isDay); 
  
         int dayOfWeek = gc.get(gc.DAY_OF_WEEK) - 1;
-        int retDay = 0;
         
         if(dayOfWeek == 0) {
         	return 6;
         } else {
-        	return retDay - 1; 
+        	return dayOfWeek - 1; 
         }
     }
      

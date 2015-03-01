@@ -54,9 +54,7 @@ function fnAgree(){
         }
     }
     
-    //실명인증 기본페이지는 주민번호 실명확인으로 한다.
-    //패키지 변경 document.stplatForm.action = "<c:url value='/uss/umt/EgovRlnmCnfirm.do'/>";
-    document.stplatForm.action = "<c:url value='/sec/rnc/EgovRlnmCnfirm.do'/>";
+    document.stplatForm.action = "<c:url value='/uss/umt/EgovMberSbscrbView.do'/>";
     document.stplatForm.submit();
 }
 
@@ -69,7 +67,7 @@ function fnDisAgree(){
 </head>
 <body>
         <!-- content start -->
-        <form name="stplatForm" action="<c:url value='/sec/rnc/EgovRlnmCnfirm.do'/>" method="post" >
+        <form name="stplatForm" action="<c:url value='/uss/umt/EgovMberSbscrbView.do'/>" method="post" >
         <input type="hidden" name="sbscrbTy" value="${sbscrbTy}"/>
         <!-- 실명인증의 기본옵션은 주민번호 실명확인임 : 주민번호 실명인증 으로 가기위한 초기화값 -->
         <input type="hidden" name="ihidnum" value=""/>

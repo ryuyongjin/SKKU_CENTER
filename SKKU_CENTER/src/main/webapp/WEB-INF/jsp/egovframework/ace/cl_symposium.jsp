@@ -89,7 +89,7 @@
                 </ul> 
                 
                 <div class="btnWrap ar">
-                	<a href="./" class="btnViewblue">행사 자세히보기</a>
+                	<a href="/WEB-INF/jsp/egovframework/download/symposium_invitation.pdf" class="btnViewblue" target="_blank">행사 자세히보기</a>
                 </div>
                 
                 

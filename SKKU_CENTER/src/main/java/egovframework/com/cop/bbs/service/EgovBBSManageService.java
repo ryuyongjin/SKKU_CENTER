@@ -96,5 +96,26 @@ public interface EgovBBSManageService {
      * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
      */
     public List<BoardVO> selectResvList(BoardVO boardVO) throws Exception;
-
+    
+    
+    /**
+     * 상담예약 상세를 조회한다(캘린더용).
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public BoardVO selectResvInfo(BoardVO boardVO) throws Exception;
+    
+    /**
+     * 상담예약 수정
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public void updateResvInfo(BoardVO boardVO) throws Exception;
+    
+    /**
+     * 상담예약 삭제
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public void deleteResvInfo(BoardVO boardVO) throws Exception;
 }

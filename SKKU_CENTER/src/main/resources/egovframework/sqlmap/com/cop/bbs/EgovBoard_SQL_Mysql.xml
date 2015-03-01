@@ -26,6 +26,15 @@
 		<result property="atchFileId" column="ATCH_FILE_ID" columnIndex="12"/>
 		<result property="ntceBgnde" column="NTCE_BGNDE" columnIndex="13"/>
 		<result property="ntceEndde" column="NTCE_ENDDE" columnIndex="14"/>
+		<result property="resvDate" column="RESV_DATE" columnIndex="15"/>
+		<result property="resvTime" column="RESV_TIME" columnIndex="16"/>
+		<result property="major" column="MAJOR" columnIndex="17"/>
+		<result property="status" column="STATUS" columnIndex="18"/>
+		<result property="phone" column="PHONE" columnIndex="19"/>
+		<result property="schoolNo" column="SCHOOL_NO" columnIndex="20"/>
+		<result property="email" column="EMAIL" columnIndex="21"/>
+		<result property="ntcrNm" column="NTCR_NM" columnIndex="22"/>
+		<result property="nttCn" column="NTT_CN" columnIndex="23"/>
 	</resultMap>
 
 	<resultMap id="boardDetail" class="egovframework.com.cop.bbs.service.BoardVO">
@@ -55,10 +64,45 @@
 		<result property="fileAtchPosblAt" column="FILE_ATCH_POSBL_AT" columnIndex="23"/>
 		<result property="posblAtchFileNumber" column="ATCH_POSBL_FILE_NUMBER" columnIndex="24"/>
 		<result property="bbsNm" column="BBS_NM" columnIndex="25"/>
-		<result property="resvDate" column="RESV_DATE" columnIndex="26"/>
-		<result property="resvTime" column="RESV_TIME" columnIndex="27"/>
 	</resultMap>
 
+	<resultMap id="resvDetail" class="egovframework.com.cop.bbs.service.BoardVO">
+		<result property="bbsId" column="BBS_ID" columnIndex="1"/>
+		<result property="nttId" column="NTT_ID" columnIndex="2"/>
+		<result property="nttSj" column="NTT_SJ" columnIndex="3"/>	
+		<result property="ntcrId" column="NTCR_ID" columnIndex="4"/>
+		<result property="ntcrNm" column="NTCR_NM" columnIndex="5"/>
+		<result property="nttNo" column="NTT_NO" columnIndex="6"/>
+		<result property="nttCn" column="NTT_CN" columnIndex="7"/>
+		<result property="password" column="PASSWORD" columnIndex="8"/>
+		<result property="frstRegisterId" column="FRST_REGISTER_ID" columnIndex="9"/>
+		<result property="frstRegisterNm" column="FRST_REGISTER_NM" columnIndex="10"/>
+		<result property="frstRegisterPnttm" column="FRST_REGIST_PNTTM" columnIndex="11"/>
+		<result property="ntceBgnde" column="NTCE_BGNDE" columnIndex="12"/>
+		<result property="ntceEndde" column="NTCE_ENDDE" columnIndex="13"/>
+		<result property="inqireCo" column="RDCNT" columnIndex="14"/>
+		<result property="useAt" column="USE_AT" columnIndex="15"/>
+		<result property="atchFileId" column="ATCH_FILE_ID" columnIndex="16"/>
+		<result property="parnts" column="PARNTSCTT_NO" columnIndex="17"/>
+		<result property="replyAt" column="ANSWER_AT" columnIndex="18"/>		
+		<result property="replyLc" column="ANSWER_LC" columnIndex="19"/>
+		<result property="sortOrdr" column="SORT_ORDR" columnIndex="19"/>
+		<result property="bbsTyCode" column="BBS_TY_CODE" columnIndex="20"/>
+		<result property="bbsAttrbCode" column="BBS_ATTRB_CODE" columnIndex="21"/>
+		<result property="replyPosblAt" column="REPLY_POSBL_AT" columnIndex="22"/>
+		<result property="fileAtchPosblAt" column="FILE_ATCH_POSBL_AT" columnIndex="23"/>
+		<result property="posblAtchFileNumber" column="ATCH_POSBL_FILE_NUMBER" columnIndex="24"/>
+		<result property="bbsNm" column="BBS_NM" columnIndex="25"/>
+		<result property="resvDate" column="RESV_DATE" columnIndex="26"/>
+		<result property="resvTime" column="RESV_TIME" columnIndex="27"/>
+		<result property="major" column="MAJOR" columnIndex="28"/>
+		<result property="status" column="STATUS" columnIndex="29"/>
+		<result property="phone" column="PHONE" columnIndex="30"/>
+		<result property="schoolNo" column="SCHOOL_NO" columnIndex="31"/>
+		<result property="email" column="EMAIL" columnIndex="32"/>
+		<result property="statusNm" column="STATUS_NM" columnIndex="33"/>
+	</resultMap>
+	
 	<resultMap id="sortList" class="egovframework.com.cop.bbs.service.BoardVO">
 		<result property="bbsId" column="BBS_ID" columnIndex="1"/>
 		<result property="nttId" column="NTT_ID" columnIndex="2"/>
@@ -105,7 +149,7 @@
 			( #nttId#, #bbsId#, #nttSj#, #nttCn#, #nttNo#, 
 			  #ntcrId#, #ntcrNm#, #password#, #inqireCo#, 
 			  #ntceBgnde#, #ntceEndde#, #replyAt#, 
-			  #email#, #major#, #schoolNo#, #phone#, #resvDate#,#resvTime#, #status#,
+			  #email#, #major#, #schoolNo#, #phone#, #resvDate#,#resvTime#, 'A',
 			  #parnts#, 1, #replyLc#, #atchFileId#,
 			  #frstRegisterId#, SYSDATE(), 'Y'
 			 )			
@@ -156,7 +200,8 @@
 				a.NTT_ID, a.NTT_SJ, a.FRST_REGISTER_ID, IFNULL(b.USER_NM, a.NTCR_NM) as FRST_REGISTER_NM,
 				DATE_FORMAT(a.FRST_REGIST_PNTTM, '%Y-%m-%d') as FRST_REGIST_PNTTM,
 				a.RDCNT, a.PARNTSCTT_NO, a.ANSWER_AT, a.ANSWER_LC, a.USE_AT, a.ATCH_FILE_ID,
-				a.BBS_ID, a.NTCE_BGNDE, a.NTCE_ENDDE
+				a.BBS_ID, a.NTCE_BGNDE, a.NTCE_ENDDE, a.RESV_DATE, a.RESV_TIME, a.MAJOR, a.STATUS,
+				a.PHONE, a.SCHOOL_NO, a.EMAIL, a.NTCR_NM, a.NTT_CN
 			FROM
 				COMTNBBS a
 			LEFT OUTER JOIN 
@@ -173,7 +218,27 @@
 			</isEqual>	
 			<isEqual prepend="AND" property="searchCnd" compareValue="2">
 				<![CDATA[	b.USER_NM LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
-			</isEqual>				
+			</isEqual>
+			<isEqual prepend="AND" property="searchCnd" compareValue="3">
+				<![CDATA[	a.SCHOOL_NO LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
+			</isEqual>
+			<isEqual prepend="AND" property="searchCnd" compareValue="4">
+				<![CDATA[	a.NTCR_NM LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
+			</isEqual>
+			<isNotEmpty prepend="AND" property="searchStatus">
+				<![CDATA[	a.STATUS = #searchStatus# 		]]>
+			</isNotEmpty>
+			<isNotEmpty property="stResvDate">
+				<isNotEmpty property="edResvDate">
+					<isEqual prepend="AND" property="searchDateGbn" compareValue="A">
+						<![CDATA[ 	a.FRST_REGIST_PNTTM BETWEEN STR_TO_DATE(#stResvDate#,'%Y%m%d') AND STR_TO_DATE(#edResvDate#,'%Y%m%d') ]]>
+					</isEqual>				
+					<isEqual prepend="AND" property="searchDateGbn" compareValue="B">
+						<![CDATA[ 	a.RESV_DATE BETWEEN #stResvDate# AND #edResvDate# ]]>
+					</isEqual>				
+				</isNotEmpty>
+			</isNotEmpty>
+			
 		<![CDATA[			
 			ORDER BY a.SORT_ORDR DESC, NTT_NO ASC
 			LIMIT #recordCountPerPage# OFFSET #firstIndex#
@@ -201,6 +266,25 @@
 			<isEqual prepend="AND" property="searchCnd" compareValue="2">
 				<![CDATA[	b.USER_NM LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
 			</isEqual>			
+			<isEqual prepend="AND" property="searchCnd" compareValue="3">
+				<![CDATA[	a.SCHOOL_NO LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
+			</isEqual>
+			<isEqual prepend="AND" property="searchCnd" compareValue="4">
+				<![CDATA[	a.NTCR_NM LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
+			</isEqual>
+			<isNotEmpty prepend="AND" property="searchStatus">
+				<![CDATA[	a.STATUS = #searchStatus# 		]]>
+			</isNotEmpty>
+			<isNotEmpty property="stResvDate">
+				<isNotEmpty property="edResvDate">
+					<isEqual prepend="AND" property="searchDateGbn" compareValue="A">
+						<![CDATA[ 	a.FRST_REGIST_PNTTM BETWEEN STR_TO_DATE(#stResvDate#,'%Y%m%d') AND STR_TO_DATE(#edResvDate#,'%Y%m%d') ]]>
+					</isEqual>				
+					<isEqual prepend="AND" property="searchDateGbn" compareValue="B">
+						<![CDATA[ 	a.RESV_DATE BETWEEN #stResvDate# AND #edResvDate# ]]>
+					</isEqual>				
+				</isNotEmpty>
+			</isNotEmpty>
 	</select>	
  
 	<select id="BBSManageDAO.selectBoardArticle" parameterClass="BoardVO" resultMap="boardDetail" >
@@ -379,7 +463,7 @@
  		]]>
  	</update>
  	
- 	<select id="BBSManageDAO.selectResvList" parameterClass="BoardVO" resultMap="boardDetail" >
+ 	<select id="BBSManageDAO.selectResvList" parameterClass="BoardVO" resultMap="resvDetail" >
 		<![CDATA[
 			SELECT
 				a.NTT_SJ, a.NTCR_ID, a.NTCR_NM, a.NTT_NO, a.NTT_CN,
@@ -390,7 +474,16 @@
 				a.PARNTSCTT_NO, a.ANSWER_AT, a.ANSWER_LC, a.SORT_ORDR,
 				a.RESV_DATE , a.RESV_TIME,
 				c.BBS_TY_CODE, c.BBS_ATTRB_CODE, c.REPLY_POSBL_AT, 
-				c.FILE_ATCH_POSBL_AT, c.ATCH_POSBL_FILE_NUMBER, c.BBS_NM
+				c.FILE_ATCH_POSBL_AT, c.ATCH_POSBL_FILE_NUMBER, c.BBS_NM,
+				a.MAJOR, a.STATUS,a.PHONE, a.SCHOOL_NO, a.EMAIL,
+				(
+          			CASE a.STATUS
+			        WHEN 'A'  THEN '신청중'
+			        WHEN 'B'  THEN '예약완료'
+			        WHEN 'C'  THEN '상담완료'
+			        WHEN 'D'  THEN '예약보류'
+			        END
+		        )AS STATUS_NM
 			FROM
 				COMTNBBS a
 			LEFT OUTER JOIN 
@@ -401,9 +494,57 @@
 			ON a.BBS_ID = c.BBS_ID			
 			WHERE
 				a.BBS_ID = 'BBSMSTR_000000000021'
-			AND
-				a.RESV_DATE BETWEEN #searchBgnDe# AND #searchEndDe#	
-		]]>				
+		]]>
+			<isNotEmpty property="searchBgnDe">
+				<isNotEmpty prepend="AND" property="searchEndDe">
+					a.RESV_DATE BETWEEN #searchBgnDe# AND #searchEndDe#
+				</isNotEmpty>
+			</isNotEmpty>
+			<isNotEmpty property="nttId">
+				<isNotEqual prepend="AND" property="nttId" compareValue="0">
+					a.NTT_ID = #nttId#
+				</isNotEqual>
+			</isNotEmpty>					
 	</select> 
+	
+	<update id="BBSManageDAO.updateResvInfo" parameterClass="BoardVO">
+		UPDATE COMTNBBS SET
+				  LAST_UPDUSR_ID = #lastUpdusrId#
+				, LAST_UPDT_PNTTM = SYSDATE()
+		<isNotEmpty prepend="," property="major">
+				MAJOR = #major#
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="nttSj">
+				NTT_SJ = #nttSj#
+		</isNotEmpty>	 
+		<isNotEmpty prepend="," property="nttCn">
+				NTT_CN = #nttCn# 
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="ntcrId">
+				NTCR_ID = #ntcrId# 
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="ntcrNm">
+				NTCR_NM = #ntcrNm#
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="status">
+				STATUS = #status#
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="phone">
+				PHONE = #phone#
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="email">
+				EMAIL = #email#
+		</isNotEmpty>
+		<isNotEmpty prepend="," property="schoolNo">
+				SCHOOL_NO = #schoolNo#
+		</isNotEmpty>
+			WHERE BBS_ID = #bbsId#
+			AND NTT_ID = #nttId#
+ 	</update>
  	
+ 	<delete id="BBSManageDAO.deleteResvInfo" parameterClass="BoardVO">
+		DELETE FROM COMTNBBS
+		 WHERE BBS_ID = 'BBSMSTR_000000000021'
+		   AND NTT_ID = #nttId#
+ 	</delete>
 </sqlMap>

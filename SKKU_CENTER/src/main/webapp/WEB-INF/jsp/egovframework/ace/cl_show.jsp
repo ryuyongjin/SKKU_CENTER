@@ -102,7 +102,7 @@
                 
                 
                 
-                <!-- 검색박스 start -->
+                <!-- 20150226 준비중 
                 <div class="searchBox mt30">
                 <form name="frm" action ="" method="get">
                     <fieldset>
@@ -116,9 +116,7 @@
                     </fieldset>
                 </form>
                 </div> 
-                <!-- //검색박스 end -->
-
-                <!-- 게시판 -->
+ 
                 <div class="boardList">
                 <table summary="게시판 번호, 제목, 작성자, 작성일, 조회수 구성">
                 <caption>공지사항 목록</caption>
@@ -153,12 +151,7 @@
                     </tbody>
                 </table>
                 </div>
-                <!-- //게시판 -->
-                
-                
-
-                
-                <!-- PC용 페이징 start -->
+ 
                 <div class="paging">
                     <a href="/" class="first"><img src="../images/common/btn_first.gif" alt="처음" /></a>
                     <a href="/" class="prev"><img src="../images/common/btn_prev.gif" alt="이전" /></a>
@@ -175,14 +168,12 @@
                     <a href="/" class="next"><img src="../images/common/btn_next.gif" alt="다음" /></a>
                     <a href="/" class="end"><img src="../images/common/btn_end.gif" alt="끝" /></a>
 		        </div>
-                <!-- //PC용 페이징 end -->
-                
-                <!-- 모바일용 페이징 start -->
+ 
                 <div class="pagingMb">
                 	<a href="#prev" class="prev">이전</a>
                 	<a href="/" class="next">다음</a>
                 </div> 
-                <!-- //모바일용 페이징 end --> 
+                 --> 
 
                 
 

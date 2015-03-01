@@ -106,7 +106,51 @@ public class BoardVO extends Board implements Serializable {
     private String subPageIndex = "";
     ////-------------------------------
 
-    /**
+    /** 예약일 시작일 */
+    private String stResvDate = "";
+    
+    /** 예약일 종료일 */
+    private String edResvDate = "";
+    
+    /** 기간조건*/
+    private String searchDateGbn = "";
+    
+    /** 검색상태*/
+    private String searchStatus ="";
+    
+    public String getSearchStatus() {
+		return searchStatus;
+	}
+
+	public void setSearchStatus(String searchStatus) {
+		this.searchStatus = searchStatus;
+	}
+
+	public String getStResvDate() {
+		return stResvDate;
+	}
+
+	public void setStResvDate(String stResvDate) {
+		this.stResvDate = stResvDate;
+	}
+
+	public String getEdResvDate() {
+		return edResvDate;
+	}
+
+	public void setEdResvDate(String edResvDate) {
+		this.edResvDate = edResvDate;
+	}
+
+	public String getSearchDateGbn() {
+		return searchDateGbn;
+	}
+
+	public void setSearchDateGbn(String searchDateGbn) {
+		this.searchDateGbn = searchDateGbn;
+	}
+
+	/**
      * searchBgnDe attribute를 리턴한다.
      * 
      * @return the searchBgnDe

@@ -1,17 +1,22 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %> 
-
 <!-- PC용 header ---------------------------------------------------------------------------------------------------------------------------------->
 <div id="header">
-    
-    
     <!-- util -->
     <div class="topWrap">
         <div>
         <ul>
             <li><a href="/">홈</a></li>
-            <li><a href="/">성균관대로그인</a></li>
-            <li><a href="/login.do">일반인로그인</a></li>
-            <li><a href="/join.do">일반인회원가입</a></li>
+            <c:choose>
+	            <c:when test="${loginVO != null and loginVO.id != null}">
+					<li>${loginVO.name }님 환영합니다.${loginVO.id}</li>
+					<li><a href="${pageContext.request.contextPath}/uat/uia/actionLogout.do">로그아웃</a></li>
+				</c:when>
+				<c:otherwise>
+		            <li><a href="#none">성균관대로그인</a></li>
+		            <li><a href="/uat/uia/egovLoginUsr.do">일반인로그인</a></li>
+		            <!-- <li><a href="/uss/umt/EgovMberSbscrbView.do">일반인회원가입</a></li> -->
+				</c:otherwise>
+            </c:choose>
         </ul>
         </div>
     </div>
@@ -34,7 +39,10 @@
                             <li><a href="/about/greeting.do">센터장 인사말</a></li>
                             <li><a href="/about/history.do">설립목적 및 연혁</a></li>
                             <li><a href="/about/network.do">연구 영역 네트워크</a></li>
+                            <li><a href="javascript:alert('내용준비중입니다.');">공지사항</a></li>
+                            <!-- 20150226 준비중 
                             <li><a href="/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000011">공지사항</a></li>
+                            -->
                             <li><a href="/about/location.do">오시는길</a></li>
                         </ul>
                     </div>
@@ -82,14 +90,24 @@
                             <li><a href="/cschool/cadvisor.do">C-advisor 상담 예약</a></li>
                             <li><a href="/cschool/coffice.do">C-Office 소개</a></li>
                             <li>
+                            	<a href="javascript:alert('내용준비중입니다.');">커뮤니티</a>
+                                <ul class="sub_navdep2">
+                                    <li><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">Q&amp;A</a></li>
+                                </ul>
+                            	<!-- 20150226 준비중 
                                 <a href="/cschool/news.do">커뮤니티</a>
                                 <ul class="sub_navdep2">
                                     <li><a href="/cschool/news.do">NEWS</a></li>
                                     <li><a href="/cschool/student.do">학생소감</a></li>
                                     <li><a href="/cschool/gallery.do">갤러리</a></li>
                                     <li><a href="/cschool/faq.do">FAQ</a></li>
-                                    <li><a href="/cschool/qa.do">Q&A</a></li>
+                                    <li><a href="/cschool/qa.do">Q&amp;A</a></li>
                                 </ul>
+                                -->
                             </li>
                         </ul>
                     </div>
@@ -131,20 +149,42 @@
                                 </ul>
                             </li>
                             <li>
+                            	<a href="javascript:alert('내용준비중입니다.');">커뮤니티</a>
+                                <ul class="sub_navdep2">
+                                    <li><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+                                    <li><a href="javascript:alert('내용준비중입니다.');">Q&amp;A</a></li>
+                                </ul>
+                            	<!-- 20150226 준비중 
                                 <a href="/ace/news.do">커뮤니티</a>
                                 <ul class="sub_navdep2">
                                     <li><a href="/ace/news.do">NEWS</a></li>
                                     <li><a href="/ace/student.do">학생소감</a></li>
                                     <li><a href="/ace/gallery.do">갤러리</a></li>
                                     <li><a href="/ace/faq.do">FAQ</a></li>
-                                    <li><a href="/ace/qa.do">Q&A</a></li>
+                                    <li><a href="/ace/qa.do">Q&amp;A</a></li>
                                 </ul>
+                                -->
                             </li>
                         </ul>
                     </div>
                 </div> 
             </li>     
             <li>
+            	<h2 class="hn5">
+                 <a href="javascript:alert('내용준비중입니다.');" class="globalMenu" id="menu5"><img src="/images/common/gnb05.gif" alt="대학연구" class="menuImg" /></a>
+                </h2>
+                <div class="sub_nav_box" id="sub_menu5">
+                    <div class="sub_nav">
+                        <ul>
+                            <li><a href="javascript:alert('내용준비중입니다.');">연구보고서 및 자료</a></li>
+                            <li><a href="javascript:alert('내용준비중입니다.');">행사</a></li>
+                        </ul>
+                    </div>
+                </div> 
+            	<!-- 20150226 준비중 
                 <h2 class="hn5">
                  <a href="/research/data.do" class="globalMenu" id="menu5"><img src="/images/common/gnb05.gif" alt="대학연구" class="menuImg" /></a>
                 </h2>
@@ -156,6 +196,7 @@
                         </ul>
                     </div>
                 </div> 
+                -->
             </li>               
             
         </ul>
@@ -183,10 +224,10 @@
         
         <h3 class="first">센터소개</h3>
         <ul>
-            <li><a href="/greeting.do">센터장 인사말</a></li>
-            <li><a href="/history.do">설립목적 및 연혁</a></li>
-            <li><a href="/network.do">연구 영역 네트워크</a></li>
-            <li><a href="/about/notice.do">공지사항</a></li>
+            <li><a href="/about/greeting.do">센터장 인사말</a></li>
+            <li><a href="/about/history.do">설립목적 및 연혁</a></li>
+            <li><a href="/about/network.do">연구 영역 네트워크</a></li>
+            <li><a href="javascript:alert('내용준비중입니다.');">공지사항</a></li>
             <li><a href="/about/location.do">오시는길</a></li>
         </ul>
         
@@ -222,11 +263,18 @@
             <dt><a href="/">커뮤니티</a></dt>
             <dd>
                 <ul>
+                	<li><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">Q&A</a></li>
+                	<!-- 20150226 준비중
                     <li><a href="/cschool/news.do">NEWS</a></li>
                     <li><a href="/cschool/student.do">학생소감</a></li>
                     <li><a href="/cschool/gallery.do">갤러리</a></li>
                     <li><a href="/cschool/faq.do">FAQ</a></li>
                     <li><a href="/cschool/qa.do">Q&A</a></li>
+                    -->
                 </ul>
             </dd>
         </dl>
@@ -249,7 +297,7 @@
                     <li><a href="/ace/pro_analysis.do">학습경험분석</a></li>
                 </ul>
             </dd>
-            <dt><a href="/">성대형 ACE 모델 확산</a></dt>
+            <dt><a href="/ace/cl_supporters.do">성대형 ACE 모델 확산</a></dt>
             <dd>
                 <ul>
                     <li><a href="/ace/cl_supporters.do">창의리더 서포터즈</a></li>
@@ -264,19 +312,30 @@
             <dt><a href="/">커뮤니티</a></dt>
             <dd>
                 <ul>
+                	<li><a href="javascript:alert('내용준비중입니다.');">NEWS</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">학생소감</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">갤러리</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">FAQ</a></li>
+                    <li><a href="javascript:alert('내용준비중입니다.');">Q&A</a></li>
+                	<!-- 20150226 준비중
                     <li><a href="/ace/news.do">NEWS</a></li>
                     <li><a href="/ace/student.do">학생소감</a></li>
                     <li><a href="/ace/gallery.do">갤러리</a></li>
                     <li><a href="/ace/faq.do">FAQ</a></li>
                     <li><a href="/ace/qa.do">Q&A</a></li>
+                    -->
                 </ul>
             </dd>
         </dl>
         
         <h3>대학연구</h3>
         <ul>
+        	<li><a href="javascript:alert('내용준비중입니다.');">연구보고서 및 자료</a></li>
+            <li><a href="javascript:alert('내용준비중입니다.');">행사</a></li>
+        	<!-- 20150226 준비중
             <li><a href="/research/data.do">연구보고서 및 자료</a></li>
             <li><a href="/research/event.do">행사</a></li>
+            -->
         </ul>
             
         </nav>
@@ -287,8 +346,8 @@
     <div class="topWrap">
         <div>
         <ul>
-            <li><a href="/">성균관대로그인</a></li>
-            <li><a href="/etc/login.do">일반인로그인</a></li>
+            <li><a href="#none">성균관대로그인</a></li>
+            <li><a href="#none">일반인로그인</a></li>
         </ul>
         </div>
     </div>

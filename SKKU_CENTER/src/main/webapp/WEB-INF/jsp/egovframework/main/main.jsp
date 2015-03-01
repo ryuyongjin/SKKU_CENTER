@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %> 
-
 <!doctype html>
 <html lang="ko">
 <head>
@@ -136,11 +135,13 @@
             <div class="noticeBox">
             	<div class="noticeList">
                     <h3>NOTICE</h3>
-                    <span class="more"><a href="/">더보기 &gt;</a></span>
+                    <span class="more"><a href="#none">더보기 &gt;</a></span>
                     
                     <dl>
-                        <dt><a href="/">대학교육혁신센터 공지사항 내용</a></dt>
+                        <dt><a href="#none">준비중입니다.</a></dt>
                         <dd>2015/02/31</dd>
+                        
+                        <!-- 20150226 공지사항 6줄 
                         <dt><a href="/">ACE 사업 소감사례 게시판</a></dt>
                         <dd>2015/02/31</dd>
                         <dt><a href="/">글로벌 창의 리더 인재양성</a></dt>
@@ -151,6 +152,7 @@
                         <dd>2015/02/31</dd>
                         <dt><a href="/">공지사항 추가</a></dt>
                         <dd>2015/02/31</dd>
+                        -->
                     </dl>
                 </div>
                 

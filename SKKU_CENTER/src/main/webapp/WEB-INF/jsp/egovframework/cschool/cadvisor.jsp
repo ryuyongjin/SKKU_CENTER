@@ -39,21 +39,78 @@
 		//var ntceBgnde = eval(document.getElementById("ntceBgnde").value);
 		//var ntceEndde = eval(document.getElementById("ntceEndde").value);
 
-
-		/* if(ntceBgnde > ntceEndde){
-			alert("게시기간 종료일이 시작일보다 빠릅니다.");
+		var major = $("#major").val();
+		var schoolNo = $("#schoolNo").val();
+		var nttSj = $("#nttSj").val();
+		var ntcrNm = $("#ntcrNm").val();
+		var phone = $("#phone").val();
+		var email = $("#email").val();
+		var resvDateHan = $("#resvDateHan").val();
+		var nttCn = $("#nttCn").val();
+		
+		if(major == "") {
+			alert("학과를 입력해주세요.");
+			$("#major").focus();
 			return;
-		} */
+		}
+		
+		if(nttSj == "") {
+			alert("학년을 입력해주세요.");
+			$("#nttSj").focus();
+			return;
+		}
+		
+		if(ntcrNm == "") {
+			alert("이름을 입력해주세요.");
+			$("#ntcrNm").focus();
+			return;
+		}
+		
+		if(schoolNo == "") {
+			alert("학번을 입력해주세요.");
+			$("#schoolNo").focus();
+			return;
+		}
+		
+		if(phone == "") {
+			alert("연락처를 입력해주세요.");
+			$("#phone").focus();
+			return;
+		}
+		
+		if(email == "") {
+			alert("이메일을 입력해주세요.");
+			$("#email").focus();
+			return;
+		}
+		
+		if(!validateEmail(email)) {
+			alert("정상적인 이메일주소를 입력해주세요.");
+			$("#email").focus();
+			return;
+		}
+		
+		if(resvDateHan == "") {
+			alert("상담일을 입력해주세요.");
+			$("#resvDateHan").focus();
+			return;
+		}
+		
+		if(nttCn == "") {
+			alert("상담내용을 입력해주세요.");
+			$("#nttCn").focus();
+			return;
+		}
 
 		/* if (!validateBoard(document.board)){
 			return;
 		} */
 
-		if (confirm('<spring:message code="common.regist.msg" />')) {
+		//if (confirm('<spring:message code="common.regist.msg" />')) {
 			//document.board.onsubmit();
-			document.board.action = "<c:url value='/cop/bbs${prefix}/insertBoardArticle.do'/>";
-			document.board.submit();
-		}
+		document.board.action = "<c:url value='/cop/bbs${prefix}/insertBoardArticle.do'/>";
+		document.board.submit();
+		//}
 	}
 
 	function fn_egov_select_noticeList() {
@@ -77,6 +134,11 @@
 		$("#resvDate").val(date);
 		$("#resvTime").val(time);
 	}
+	
+	function validateEmail(email) { 
+	    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	    return re.test(email);
+	} 
 </script>
 </head>
 
@@ -105,11 +167,7 @@
    <input id="ntceEndde" name="ntceEndde" type="hidden" value="99991231">
 </c:if>
 <div id="wrap">
-
-	<!-- header -->
 	<%@ include file="/WEB-INF/jsp/egovframework/include/header.jsp" %>
-    <!-- //header -->
-	<!-- 상단 네비 path -->
     <div class="pathWrap">
     	<div class="path">
             <ul>
@@ -119,26 +177,15 @@
             </ul>
         </div>
     </div>
-    <!-- //상단 네비 path -->
-
-    <!-- 왼쪽메뉴,본문 container -->
     <div id="container">
-    	<!-- 왼쪽메뉴 -->
         <%@ include file="/WEB-INF/jsp/egovframework/include/lnb_cschool.jsp" %>
-	    <!-- //왼쪽메뉴 -->
-        <!-- 서브본문 감싸기 -->
         <div class="content">
-        	<!-- 타이틀 -->
             <h3 class="title">
             C-Advisor 상담 예약
             </h3>
-            <!-- //타이틀 -->
-        	<!-- 본문내용 시작 ---------------------------------------------------------------------------------------------->
 				<p class="mb10">
                 	*는 필수입력입니다.
                 </p>
-                
-				<!-- 상담예약 폼 start -->
             	<div class="writeType1">
                 <table summary="상담예약  폼">
                 <caption>상담예약 정보</caption>
@@ -151,55 +198,43 @@
                     <tbody>
                         <tr>
                             <th scope="row">* 학과</th>
-                            <td><input type="text" name="major" id="major" class="input100" value="dummy"></td>
+                            <td><input type="text" name="major" id="major" class="input100" value=""></td>
                             <th scope="row">* 학년</th>
-                            <td><input type="text" name="nttSj" id="nttSj" class="input100" value="dummy"></td>
+                            <td><input type="text" name="nttSj" id="nttSj" class="input100" value=""></td>
                         </tr>
                         <tr>
                             <th scope="row">* 이름</th>
-                            <td><input type="text" name="ntcrNm" id="wr_link" class="input100" value="dummy"></td>
+                            <td><input type="text" name="ntcrNm" id="ntcrNm" class="input100" value=""></td>
                             <th scope="row">* 학번</th>
-                            <td><input type="text" name="schoolNo" id="schoolNo" class="input100" value="dummy"></td>
+                            <td><input type="text" name="schoolNo" id="schoolNo" class="input100" value=""></td>
                         </tr>
                         <tr>
                             <th scope="row">* 연락처</th>
-                            <td><input type="text" name="phone" id="phone" class="input100" value="dummy"></td>
+                            <td><input type="text" name="phone" id="phone" class="input100" value=""></td>
                             <th scope="row">* 이메일</th>
-                            <td><input type="text" name="email" id="email" class="input100" value="dummy"></td>
+                            <td><input type="text" name="email" id="email" class="input100" value=""></td>
                         </tr>
                         <tr>
                             <th scope="row">상담일예약</th>
                             <td colspan="3">
                             	<input type="hidden" name="resvDate" id="resvDate" value="">
                             	<input type="hidden" name="resvTime" id="resvTime" value="">
-                            	<input type="text" name="resvDateHan" id="resvDateHan" style="padding-left:5px; width:180px;" value=""> <a href="#none" onClick="window.open('/cschool/calendar.do','캘린더보기','width=900,height=900,scrollbars=yes,left=150,top=100')" class="btnBlues">상담일예약</a></td>
+                            	<input type="text" name="resvDateHan" id="resvDateHan" style="padding-left:5px; width:180px;" value="" readonly="readonly"> <a href="#none" onClick="window.open('/cschool/calendar.do','캘린더보기','width=800,height=700,scrollbars=yes,left=150,top=100')" class="btnBlues">상담일예약</a></td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="wr_content">상담내용</label></th>
-                            <td colspan="3"><textarea id="nttCn" name="nttCn" class="textarea100">dummy</textarea><form:errors path="nttCn" />​</td>
+                            <td colspan="3"><textarea id="nttCn" name="nttCn" class="textarea100"></textarea>​</td>
                         </tr>
                     </tbody>
                 </table>
                     
                 </div>
-                <!-- //상담예약 폼 end -->
-                
-                
-                <!-- 버튼 start -->
                 <div class="btnWrap ac">
                 	<a href="javascript:fn_egov_regist_notice();" class="btnGray">신청하기</a>
                 </div>
-                <!-- //버튼 end -->
-            <!-- 본문내용 끝 ---------------------------------------------------------------------------------------------->
         </div>
-        <!-- //서브본문 감싸기 -->
     </div>
-    <!-- //왼쪽메뉴,본문 container -->
-
-	<!-- footer -->
 	<%@ include file="/WEB-INF/jsp/egovframework/include/footer.jsp" %>
-    <!-- //footer -->
-    
 </div>
 </form:form>
 </body>
