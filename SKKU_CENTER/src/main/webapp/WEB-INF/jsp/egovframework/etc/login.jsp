@@ -51,7 +51,7 @@
 	
 	function goFindId() {
 		alert("준비중입니다.");
-		return;
+		return;   
 		
 	    document.defaultForm.action="<c:url value='/uat/uia/egovIdPasswordSearch.do'/>";
 	    document.defaultForm.submit();
@@ -131,6 +131,12 @@
 	    // 포커스
 	    //document.loginForm.rdoSlctUsr.focus();
 	}
+	
+	function press(event) {
+		if (event.keyCode==13) {
+			actionLogin();
+		}
+	}
 </script>
 </head>
 <body onLoad="fnInit();">
@@ -153,7 +159,7 @@
         <div class="content">
             <h3 class="title">
             로그인
-            </h3>
+            </h3> 
             <div class="loginWrap">  
                 <h1 class="loginTitle">
 					본인의 이메일과 비밀번호를 입력해주세요.<br>
@@ -164,7 +170,7 @@
                     <label for="login_id" class="login_id">아이디</label>
                     <input type="text" name="id" id="id" class="frm_input" size="20" maxLength="20" ime-mode: disabled;" />
                     <label for="login_pw" class="login_pw">비밀번호</label>
-                    <input type="password" name="password" id="password" class="frm_input" size="20" maxLength="20">
+                    <input type="password" name="password" id="password" class="frm_input" size="20" maxLength="20" onkeypress="press(event);" />
                     <input type="button" onclick="actionLogin();" value="로그인" class="btn_submit"> 
                 </fieldset>
                 <div class="skkuLogin">

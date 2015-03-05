@@ -143,20 +143,20 @@
 </head>
 
 <body onLoad="onloading();">
-<form:form commandName="board" name="board" method="post" enctype="multipart/form-data" >
+<form:form commandName="board" name="board" method="post" enctype="multipart/form-data">
 
 <input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>"/>
-<input type="hidden" name="bbsId" value="<c:out value='${bdMstr.bbsId}'/>" />
-<input type="hidden" name="bbsAttrbCode" value="<c:out value='${bdMstr.bbsAttrbCode}'/>" />
-<input type="hidden" name="bbsTyCode" value="<c:out value='${bdMstr.bbsTyCode}'/>" />
-<input type="hidden" name="replyPosblAt" value="<c:out value='${bdMstr.replyPosblAt}'/>" />
-<input type="hidden" name="fileAtchPosblAt" value="<c:out value='${bdMstr.fileAtchPosblAt}'/>" />
-<input type="hidden" name="posblAtchFileNumber" value="<c:out value='${bdMstr.posblAtchFileNumber}'/>" />
-<input type="hidden" name="posblAtchFileSize" value="<c:out value='${bdMstr.posblAtchFileSize}'/>" />
-<input type="hidden" name="tmplatId" value="<c:out value='${bdMstr.tmplatId}'/>" />
+<input type="hidden" name="bbsId" value="<c:out value='${searchVO.bbsId}'/>" />
+<input type="hidden" name="bbsAttrbCode" value="" />
+<input type="hidden" name="bbsTyCode" value="" />
+<input type="hidden" name="replyPosblAt" value="" />
+<input type="hidden" name="fileAtchPosblAt" value="" />
+<input type="hidden" name="posblAtchFileNumber" value="0" />
+<input type="hidden" name="posblAtchFileSize" value="" />
+<input type="hidden" name="tmplatId" value="" />
 
 <input type="hidden" name="cal_url" value="<c:url value='/sym/cal/EgovNormalCalPopup.do'/>" />
-<input type="hidden" name="authFlag" value="<c:out value='${bdMstr.authFlag}'/>" />
+<input type="hidden" name="authFlag" value="" />
 
 <c:if test="${anonymous != 'true'}">
 <input type="hidden" name="password" value="dummy">	<!-- validator 처리를 위해 지정 -->

@@ -7,10 +7,10 @@
     <div class="admin_gnb">
     	<h2><p>기본관리</p></h2>
         <ul>
-            <li><a href="./notice.do">공지사항</a></li>
-            <li><a href="./event_applicate.do">행사신청관리</a></li>
-            <li><a href="./event_write.do">행사등록관리</a></li>
-            <li><a href="./private.do">개인정보보호정책</a></li>
+            <li><a href="/admin/notice.do">공지사항</a></li>
+            <li><a href="/admin/event_applicate.do">행사신청관리</a></li>
+            <li><a href="/admin/event_write.do">행사등록관리</a></li>
+            <li><a href="/admin/private.do">개인정보보호정책</a></li>
         </ul>
         
         <h2><p>C-School</p></h2>
@@ -36,12 +36,12 @@
         
         <h2><p>대학연구</p></h2>
         <ul>
-            <li><a href="./data.do">연구보고서 및 자료</a></li>
+            <li><a href="/admin/data.do">연구보고서 및 자료</a></li>
         </ul>
         
         <h2><p>회원관리</p></h2>
         <ul>
-            <li><a href="./member_list.do">회원관리리스트</a></li>
+            <li><a href="/admin/member_list.do">회원관리리스트</a></li>
 
         </ul>
     </div>   

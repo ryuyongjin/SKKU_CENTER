@@ -8,7 +8,7 @@
             <li><a href="/">홈</a></li>
             <c:choose>
 	            <c:when test="${loginVO != null and loginVO.id != null}">
-					<li>${loginVO.name }님 환영합니다.${loginVO.id}</li>
+					<li>${loginVO.name }님 환영합니다.</li>
 					<li><a href="${pageContext.request.contextPath}/uat/uia/actionLogout.do">로그아웃</a></li>
 				</c:when>
 				<c:otherwise>

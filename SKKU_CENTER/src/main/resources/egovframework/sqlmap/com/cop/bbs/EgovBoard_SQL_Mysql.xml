@@ -207,9 +207,14 @@
 			LEFT OUTER JOIN 
 				COMVNUSERMASTER b
 			ON a.FRST_REGISTER_ID = b.ESNTL_ID 
-			WHERE
-				a.BBS_ID = #bbsId#
+			WHERE a.USE_AT = 'Y'
 		]]>
+			<isEqual prepend="AND" property="bbsId" compareValue="noticeAll">
+				<![CDATA[ a.BBS_ID IN ('BBSMSTR_000000000031', 'BBSMSTR_000000000032', 'BBSMSTR_000000000033', 'BBSMSTR_000000000034', 'BBSMSTR_000000000035') ]]>
+			</isEqual>
+			<isNotEqual prepend="AND" property="bbsId" compareValue="noticeAll">
+				<![CDATA[ a.BBS_ID = #bbsId# ]]>
+			</isNotEqual>
 			<isEqual prepend="AND" property="searchCnd" compareValue="0">
 				<![CDATA[	a.NTT_SJ LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
 			</isEqual>
@@ -238,7 +243,6 @@
 					</isEqual>				
 				</isNotEmpty>
 			</isNotEmpty>
-			
 		<![CDATA[			
 			ORDER BY a.SORT_ORDR DESC, NTT_NO ASC
 			LIMIT #recordCountPerPage# OFFSET #firstIndex#
@@ -254,9 +258,14 @@
 			LEFT OUTER JOIN 
 				COMVNUSERMASTER b
 			ON a.FRST_REGISTER_ID = b.ESNTL_ID 
-			WHERE
-				a.BBS_ID = #bbsId#
+			WHERE a.USE_AT = 'Y'
 		]]>
+			<isEqual prepend="AND" property="bbsId" compareValue="noticeAll">
+				a.BBS_ID IN ('BBSMSTR_000000000031','BBSMSTR_000000000032','BBSMSTR_000000000033','BBSMSTR_000000000034','BBSMSTR_000000000035')
+			</isEqual>
+			<isNotEqual prepend="AND" property="bbsId" compareValue="noticeAll">
+				a.BBS_ID = #bbsId#
+			</isNotEqual>
 			<isEqual prepend="AND" property="searchCnd" compareValue="0">
 				<![CDATA[	a.NTT_SJ LIKE CONCAT ('%', #searchWrd#,'%') 		]]>
 			</isEqual>

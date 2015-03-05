@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %> 
-
 <!doctype html>
 <html lang="ko">
 <head>
 <%@ include file="/WEB-INF/jsp/egovframework/include/head.jsp" %>
+<link rel="stylesheet" href="<c:url value='/css/egovframework/com/com.css' />" type="text/css">
 <script type="text/javascript">
     $(document).ready(function () {
         setPage({ hn: 0, sn: 2 });
@@ -13,7 +13,6 @@
 <validator:javascript formName="mberManageVO" staticJavascript="false" xhtml="true" cdata="false"/>
 <script type="text/javascript" src="<c:url value='/js/egovframework/com/sym/ccm/zip/EgovZipPopup.js' />" ></script>
 <script type="text/javaScript" language="javascript" defer="defer">
-<!--
 function fnIdCheck(){
     var retVal;
     var url = "<c:url value='/uss/umt/EgovIdDplctCnfirmView.do'/>";
@@ -32,15 +31,22 @@ function showModalDialogCallback(retVal) {
 }
 
 function fnSbscrb(){
+	if( !$("#checkField").is(":checked") ) {
+		alert("개인정보취급방침에 동의하지 않으셨습니다.");
+		$("#checkField").focus();
+		return;
+	}
+	 
 	if(validateMberManageVO(document.mberManageVO)){
+		alert("asdf");
 		if(document.mberManageVO.password.value != document.mberManageVO.password2.value){
             alert("<spring:message code="fail.user.passwordUpdate2" />");
             return;
         }
+		alert("asdf2");
         document.mberManageVO.submit();
     }
 }
--->
 </script>
 </head>
 <body>
@@ -54,6 +60,7 @@ function fnSbscrb(){
 <input type="hidden" name="pageIndex" value="<c:out value='${userSearchVO.pageIndex}'/>"/>
 <!-- 우편번호검색 -->
 <input type="hidden" name="zip_url" value="<c:url value='/sym/ccm/zip/EgovCcmZipSearchPopup.do'/>" />
+<form:hidden path="mberSttus" />
 <div id="wrap">
 	<!-- header -->
 	<%@ include file="/WEB-INF/jsp/egovframework/include/header.jsp" %>	
@@ -92,16 +99,12 @@ function fnSbscrb(){
                     <textarea id="privacy" name="privacy" readonly="readonly">${result.useStplatCn}</textarea>
                     <input name="checkuseStplatCn" type="hidden" value="<c:out value='${result.useStplatId}'/>">
                     <fieldset class="fregister_agree">
-                        <input type="checkbox" name="agree2" value="1" id="agree21">
-                        <label for="agree21">개인정보처리방침 내용에 동의합니다.</label>
+                        <input type="checkbox" id="checkField" name="checkField" value="1" />
+                        <label for="checkField">개인정보처리방침 내용에 동의합니다.</label>
                     </fieldset>
                 </div>
                 </c:forEach>
                 <!-- //개인정보취급방침 -->
-				
-                
-                
-                <!-- 회원가입 폼 start -->
                 <p>* 별표 항목은 필수입력 입니다.</p>
             	<div class="writeType1">
                 <table summary="회원가입 폼">
@@ -119,7 +122,7 @@ function fnSbscrb(){
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="name">* 이름</label></th>
+                            <th scope="row"><label for="mberNm">* 이름</label></th>
                             <td>
                             	<!-- <input type="text" name="name" size="50" class="input50"> -->
                             	 <input name="mberNm" type="text" size="20" value="" maxlength="60" title="이름입력" class="input50" />
@@ -134,14 +137,14 @@ function fnSbscrb(){
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="password">* 비밀번호확인</label></th>
+                            <th scope="row"><label for="password2">* 비밀번호확인</label></th>
                             <td>
                             	<!-- <input type="password" name="password" size="50" class="input50"> -->
-                            	<input name="password2" type="password" size="50" maxlength="20" class="input50" title="비밀번호입력">
+                            	<input type="password" id="password2" name="password2" size="50" maxlength="20" class="input50" title="비밀번호입력" />
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="affiliate">* 비밀번호힌트</label></th>
+                            <th scope="row"><label for="passwordHint">* 비밀번호힌트</label></th>
                             <td>
                             	<form:select path="passwordHint">
 			                        <form:option value="" label="--선택하세요--"/>
@@ -151,56 +154,23 @@ function fnSbscrb(){
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="affiliate">* 비밀번호정답</label></th>
+                            <th scope="row"><label for="passwordCnsr">* 비밀번호정답</label></th>
                             <td>
                             	<!-- <input type="text" name="affiliate" size="50" class="input100"> -->
                             	<form:input path="passwordCnsr" cssClass="input50" size="50" maxlength="100" />
                     			<div><form:errors path="passwordCnsr" cssClass="error"/></div>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row"><label for="phone">연락처(휴대폰)</label></th>
-                            <td>
-                            	<!-- <input type="text" name="phone" size="10"> - <input type="text" name="phone" size="10"> - <input type="text" name="phone" size="10"> -->
-                            	<form:input path="areaNo" cssClass="txaIpUmt" size="5" maxlength="5" />
-			                    - <form:input path="middleTelno" cssClass="txaIpUmt" size="5" maxlength="5" />
-			                    - <form:input path="endTelno" cssClass="txaIpUmt" size="5" maxlength="5" />
-			                    <div><form:errors path="areaNo" cssClass="error" /></div>
-			                    <div><form:errors path="middleTelno" cssClass="error" /></div>
-			                    <div><form:errors path="endTelno" cssClass="error" /></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="affiliate">소속</label></th>
-                            <td><input type="text" name="affiliate" size="50" class="input100"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="group">그룹</label></th>
-                            <td><input type="text" name="group" size="50" class="input100"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="companyname">대학및기관명</label></th>
-                            <td><input type="text" name="companyname" size="50" class="input100"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="work">학과(부)및부서</label></th>
-                            <td><input type="text" name="work" size="50" class="input100"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><label for="position">직위/직급</label></th>
-                            <td><input type="text" name="position" size="50" class="input100"></td>
-                        </tr>
+                       
                     </tbody>
                 </table>
-                    
                 </div>
-                <!-- //회원가입 폼 end -->
                 <!-- 버튼 start -->
                 <div class="btnWrap ac">
-                	<a href="/" class="btnGray">회원가입</a></a>
+                	<a href="javascript:fnSbscrb();" class="btnGray">회원가입</a></a>
+                	<a href="javascript:document.mberManageVO.reset();" class="btnGray">취소</a></a>
                 </div>
                 <!-- //버튼 end -->
-            <!-- 본문내용 끝 ---------------------------------------------------------------------------------------------------------------->
         </div>
         <!-- //서브본문 감싸기 -->
     </div>

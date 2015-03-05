@@ -4,9 +4,11 @@
     "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
 
 <form-validation>
-
     <formset>
 		<form name="board">
+			<field property="bbsId" depends="required">
+        		<arg0 key="cop.bbsId" />
+			</field> 
 			<field property="nttSj" depends="required, maxlength">
         		<arg0 key="cop.nttSj" />
         		<arg1 key="1200" resource="false"/>

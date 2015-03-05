@@ -61,7 +61,7 @@
                 oRequired = new required();
                 for (x in oRequired) {
                 	var field = form[oRequired[x][0]];
-                	if (typeof(field) == 'undefined') {
+                	if (typeof(field) == 'undefined' || field == 'undefined') {
                 		continue;
                 	}
                     if (field.type == 'text' ||
@@ -215,6 +215,10 @@
                 oMaxLength = new maxlength();
                 for (x in oMaxLength) {
                     var field = form[oMaxLength[x][0]];
+
+					if(typeof(field) == 'undefined') {
+						continue;
+					}
 
                     if (field.type == 'text' ||
                         field.type == 'textarea') {
@@ -454,6 +458,10 @@
                 oInteger = new IntegerValidations();
                 for (x in oInteger) {
                 	var field = form[oInteger[x][0]];
+                	
+                	if(typeof(field) == 'undefined') {
+                		continue;
+                	}
 
                     if (field.type == 'text' ||
                         field.type == 'textarea' ||

@@ -380,17 +380,17 @@ public class EgovBBSManageController {
 		    return "egovframework/com/cop/bbs/EgovNoticeRegist";
 		}
 		
-		if (isAuthenticated) {
+		//if (isAuthenticated) {	// 잠시 풀어두자
 		    List<FileVO> result = null;
 		    String atchFileId = "";
-		    
+		     
 		    final Map<String, MultipartFile> files = multiRequest.getFileMap();
 		    if (!files.isEmpty()) {
 			result = fileUtil.parseFileInf(files, "BBS_", 0, "", "");
 			atchFileId = fileMngService.insertFileInfs(result);
 		    }
 		    board.setAtchFileId(atchFileId);
-		    board.setFrstRegisterId(user.getUniqId());
+		    //board.setFrstRegisterId(user.getUniqId());	// 로그인 연동 안되니 잠시 주석..
 		    board.setBbsId(board.getBbsId());
 		    
 		    
@@ -398,7 +398,7 @@ public class EgovBBSManageController {
 		    board.setPassword("");	// dummy 오류 수정 (익명이 아닌 경우 validator 처리를 위해 dummy로 지정됨)
 		    
 		    
-		    board.setNtcrId(user.getId()); //게시물 통계 집계를 위해 등록자 ID 저장
+		    //board.setNtcrId(user.getId());   //게시물 통계 집계를 위해 등록자 ID 저장
 		    //board.setNtcrNm(user.getName()); //게시물 통계 집계를 위해 등록자 Name 저장
 		    
 		    board.setNttCn(unscript(board.getNttCn()));	// XSS 방지
@@ -415,7 +415,7 @@ public class EgovBBSManageController {
 				}
 				
 			}
-		}
+		//}
 		
 		return "forward:/cop/bbs/selectBoardList.do";
     }

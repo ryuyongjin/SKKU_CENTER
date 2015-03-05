@@ -1,18 +1,27 @@
+
 @charset "utf-8";
 
 /* 버튼 모음 ******************************************************************/
 /* 기본버튼 */
 a.btnGray{display:inline-block;padding:10px 30px;background:#9e9e9e;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnGray:focus, a.btnGray:hover{background:#888;}
+button.btnGray{display:inline-block;padding:10px 30px;background:#9e9e9e;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnGray{display:inline-block;padding:10px 30px;background:#9e9e9e;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 a.btnBlue{display:inline-block;padding:10px 30px;background:#00adcb;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnBlue:focus, a.btnBlue:hover{background:#888;}
+button.btnBlue{display:inline-block;padding:10px 30px;background:#00adcb;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnBlue{display:inline-block;padding:10px 30px;background:#00adcb;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 a.btnGreen{display:inline-block;padding:10px 30px;background:#acca1d;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnGreen:focus, a.btnGreen:hover{background:#888;}
+button.btnGreen{display:inline-block;padding:10px 30px;background:#acca1d;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnGreen{display:inline-block;padding:10px 30px;background:#acca1d;color:#fff !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 a.btnWhite{display:inline-block;padding:10px 30px;background:#ededed;color:#000 !important;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnWhite:focus, a.btnWhite:hover{background:#ddd;}
+button.btnWhite{display:inline-block;padding:10px 30px;background:#ededed;color:#000 !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnWhite{display:inline-block;padding:10px 30px;background:#ededed;color:#000 !important;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 /* 큰버튼 */
 a.btnGrayb{display:inline-block;padding:13px 40px;background:#9e9e9e;color:#fff !important;font-size:18px;vertical-align:middle;font-family:NanumGothicBold;}
@@ -27,12 +36,18 @@ a.btnGreenb:focus, a.btnGreenb:hover{background:#888;}
 /* 작은버튼 */
 a.btnGrays{display:inline-block;padding:4px 10px;background:#bfbfbf;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnGrays:focus, a.btnGrays:hover{background:#009bb6;}
+button.btnGrays{display:inline-block;padding:4px 10px;background:#bfbfbf;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnGrays{display:inline-block;padding:4px 10px;background:#bfbfbf;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 a.btnBlues{display:inline-block;padding:4px 10px;background:#00adcb;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnBlues:focus, a.btnBlues:hover{background:#888;}
+button.btnBlues{display:inline-block;padding:4px 10px;background:#00adcb;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnBlues{display:inline-block;padding:4px 10px;background:#00adcb;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 a.btnGreens{display:inline-block;padding:4px 10px;background:#acca1d;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;}
 a.btnGreens:focus, a.btnGreens:hover{background:#888;}
+button.btnGreens{display:inline-block;padding:4px 10px;background:#acca1d;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
+.btnGreens{display:inline-block;padding:4px 10px;background:#acca1d;color:#fff !important;font-size:13px;vertical-align:middle;font-family:NanumGothicBold;border:0;cursor:pointer;}
 
 /* 신청자세히보기버튼 */
 a.btnViewblue{display:inline-block;padding:15px 70px 15px 30px;background:#00adcb url("/images/bbs/ico_squrearrow.gif") no-repeat center right;color:#fff;font-size:16px;vertical-align:middle;font-family:NanumGothicBold;}
@@ -109,9 +124,10 @@ table tr .etc{width:10%;}
 .calenderList .ca_choosed{background:#00adcb;cursor:pointer;}
 
 /* 상담예약 */
-.cadvisorCon{text-align:left !important;font-size:13px !important;width:100%;background:#f4f4f4;}
+.cadvisorCon{text-align:left !important;font-size:13px !important;width:100%;background:#f4f4f4;position:relative;}
 .cadvisorCon span{color:#000;font-family:'NanumGothicBold';padding:0 0 0 20px;}
 .cadvisorCon p{padding-top:5px;}
+.cadvisorCon .btn{position:absolute;top:10px;right:10px;}
 
 /* 썸네일 게시판 */
 .thumbList{width:100%;border-top:2px solid #000;}

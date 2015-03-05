@@ -34,14 +34,14 @@
    다음과 같이 CertProcessFilter(GPKI 인증 처리 오류 해결) 등록해 주시면 됩니다.
     -->
 
-    <filter>
+    <!-- <filter>
         <filter-name>HTMLTagFilter</filter-name>
         <filter-class>egovframework.com.cmm.filter.HTMLTagFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>HTMLTagFilter</filter-name>
         <url-pattern>*.do</url-pattern>
-    </filter-mapping>
+    </filter-mapping> -->
 
     <!-- UrlRewriteFilter -->
     <!--<filter>

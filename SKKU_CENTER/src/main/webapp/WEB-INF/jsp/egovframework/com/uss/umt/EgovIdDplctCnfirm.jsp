@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -20,11 +20,11 @@
   *
   */
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ko">
 <head>
+<%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_head.jsp" %>
 <title>ID중복확인</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 <base target="_self" >
 <link rel="stylesheet" href="<c:url value='/css/egovframework/com/com.css' />" type="text/css">
 <link href="<c:url value='/css/egovframework/com/button.css' />" rel="stylesheet"  type="text/css">
@@ -107,26 +107,24 @@ function fnCheck(str){
 </script>
 </head>
 <body>
-    <form name="checkForm" action ="<c:url value='/uss/umt/EgovIdDplctCnfirm.do'/>">
-
-    <table border="0" cellspacing="0" cellpadding="0" width="300">
-        <tr><td height="20" colspan="2"></td></tr>
+<form name="checkForm" action ="<c:url value='/uss/umt/EgovIdDplctCnfirm.do'/>">
+<div id="wrap">    
+	<div class="popWrap">
+		<h2>아이디 중복확인</h2>       
+    
+	<div class="writeType2">
+    <table>
         <tr>
-            <td colspan="2" ><img src="<c:url value='/images/egovframework/com/cmm/icon/tit_icon.gif' />" width="16" height="16" hspace="3" align="middle" alt="제목아이콘이미지">
-            &nbsp;아이디 중복확인</td>
-        </tr>
-        <tr><td height="20" colspan="2"></td></tr>
-        <tr>
-            <td>사용할아이디&nbsp;&nbsp;</td>
+            <th scope="row">사용할아이디</th>
             <td>
                 <input type="hidden" name="resultId" value="<c:out value="${checkId}"/>" />
 	            <input type="hidden" name="usedCnt" value="<c:out value="${usedCnt}"/>" />
 	            <input type="text" name="checkId" value="<c:out value="${checkId}"/>" maxlength="20" tabindex="1" title="아이디입력"/>
 	        </td>
 	    </tr>
-	    <tr><td height="10" colspan="2"></td></tr>
 	    <tr>
-            <td colspan="2">결과&nbsp;&nbsp;:&nbsp;
+            <th scope="row">결과</th>
+            <td>
                 <c:choose>
                 <c:when test="${usedCnt eq -1}">
                     &nbsp; 중복확인을 실행하십시오
@@ -140,33 +138,21 @@ function fnCheck(str){
                 </c:choose>
             </td>
         </tr>
-	    <tr><td height="15" colspan="2"></td></tr>
     </table>
-    <table border="0" cellspacing="0" cellpadding="0" >
-            <tr align="right">
-                <!-- 중복조회 -->
-                
-                <td>
-                <span class="button"><input type="button" onclick="fnCheckId();" value="<spring:message code='button.inquire' />" /></span>
-                </td>
-                
-                <td>&nbsp;</td>
-                <!-- 사용 -->
-                <td>
-                <span class="button"><input type="button" onclick="fnReturnId();" value="<spring:message code='button.use' />" /></span>
-                </td>
-                
-                <td>&nbsp;</td>
-                <!-- 닫기 -->
-                <td>
-                <span class="button"><input type="button" onclick="fnClose();" value="<spring:message code='button.close' />" /></span>
-                </td>
-                
-                <td></td>
-            </tr>
-        </table>
-
-    </form>
-
+    </div>
+    
+    <div class="btnWrap ac">
+    	<!-- 조회 -->
+        <span class="button"><input type="button" onclick="fnCheckId();" value="<spring:message code='button.inquire' />" class="btnGrays" /></span>
+        <!-- 사용 -->
+        <span class="button"><input type="button" onclick="fnReturnId();" value="<spring:message code='button.use' />" class="btnGrays" /></span>
+        <!-- 닫기 -->
+        <span class="button"><input type="button" onclick="fnClose();" value="<spring:message code='button.close' />" class="btnGrays" /></span>
+    </div>
+		
+    
+</div>
+</div>
+</form>
 </body>
 </html>

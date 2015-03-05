@@ -6,19 +6,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import egovframework.com.cmm.service.EgovFileMngService;
 import egovframework.com.cmm.service.FileVO;
 import egovframework.com.cop.bbs.service.Board;
 import egovframework.com.cop.bbs.service.BoardVO;
 import egovframework.com.cop.bbs.service.EgovBBSManageService;
+import egovframework.com.cop.ems.service.EgovSndngMailService;
+import egovframework.com.cop.ems.service.SndngMailVO;
 import egovframework.com.utl.fcc.service.EgovDateUtil;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import egovframework.rte.fdl.idgnr.EgovIdGnrService;
 import egovframework.rte.fdl.property.EgovPropertyService;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
 
 /**
  * 게시물 관리를 위한 서비스 구현 클래스
@@ -51,6 +53,9 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
 
     @Resource(name = "egovNttIdGnrService")
     private EgovIdGnrService nttIdgenService;
+    
+	@Resource(name = "egovSndngMailService")
+    private EgovSndngMailService egovSndngMailService;
 
     /**
      * 게시물 한 건을 삭제 한다.
@@ -119,6 +124,8 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
      * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
      */
     public Map<String, Object> selectBoardArticles(BoardVO boardVO, String attrbFlag) throws Exception {
+    	
+    	
 	List<BoardVO> list = bbsMngDAO.selectBoardArticleList(boardVO);
 	List<BoardVO> result = new ArrayList<BoardVO>();
 
@@ -223,6 +230,12 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
      * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#updateBoardArticle(egovframework.com.cop.bbs.brd.service.Board)
      */
     public void updateResvInfo(BoardVO boardVO) throws Exception {
+    	
+    	// 메일 발송 (예약완료 상태)
+		if("B".equals(boardVO.getStatus())) {
+			sendResvMail(boardVO);
+		}
+    	
     	bbsMngDAO.updateResvInfo(boardVO);
     }
     
@@ -233,5 +246,29 @@ public class EgovBBSManageServiceImpl extends EgovAbstractServiceImpl implements
      */
     public void deleteResvInfo(BoardVO boardVO) throws Exception {
     	bbsMngDAO.deleteResvInfo(boardVO);	
+    }
+    
+    
+    /**
+     * 상담예약완료 메일 발송
+     *
+     * @see egovframework.com.cop.bbs.brd.service.EgovBBSManageService#selectBoardArticles(egovframework.com.cop.bbs.brd.service.BoardVO)
+     */
+    public void sendResvMail(BoardVO boardVO) throws Exception {
+    	
+    	SndngMailVO mailVO = new SndngMailVO();
+    	
+    	mailVO.setEmailCn("테스트해봅니다.");
+    	mailVO.setRecptnPerson("cksrmswkd@naver.com");
+    	mailVO.setSj("테스트메일");
+    	
+    	
+    	boolean sendingMailResult = egovSndngMailService.sndngMail(mailVO);
+    	
+    	if(!sendingMailResult) {
+    		System.out.println("==========================================");
+    		System.out.println("		상담예약 메일발송 실패			  ");
+    		System.out.println("==========================================");
+    	}
     }
 }

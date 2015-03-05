@@ -11,6 +11,7 @@
 <head>
 <%@ include file="/WEB-INF/jsp/egovframework/admin/include/admin_head.jsp" %>
 <script type="text/javascript" src="<c:url value='/js/egovframework/com/cop/bbs/EgovBBSMng.js' />" ></script>
+<script type="text/javascript" src="<c:url value='/js/egovframework/com/sym/cal/EgovCalPopup.js'/>" ></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		<c:if test="${msg != '' and fn:length(msg) > 0}">
@@ -99,13 +100,26 @@
 				<input name="pageIndex" type="hidden" value="<c:out value='${searchVO.pageIndex}'/>"/>
 				<input type="hidden"  id="status" name="status" value=""/>
 				<input type="hidden"  id="msg" name="msg" value=""/>
+				<input type="hidden" name="cal_url" value="<c:url value='/sym/cal/EgovNormalCalPopup.do'/>" />
         		<!-- 상세검색 start -->
                 <div class="whiteBox">
                     <select id="searchDateGbn" name="searchDateGbn">
                     	<option value="A">신청일</option>
                     	<option value="B">상담예약일</option>
                     </select> 
-                    <input type="text" id="stResvDate" name="stResvDate" onfocusX="goReset();" title="기간검색시작일" /> - <input type="text" id="edResvDate" name="edResvDate" onfocusX="goReset();" title="기간검색종료일" /> 
+                    <input type="hidden" id="stResvDate" name="stResvDate" value="${searchVO.stResvDate}" />
+                    <input type="text" id="stResvDateView" name="stResvDateView" value="${fn:substring(searchVO.stResvDate,0,4)}-${fn:substring(searchVO.stResvDate,4,6)}-${fn:substring(searchVO.stResvDate,6,8)}" title="기간검색시작일" onClick="javascript:fn_egov_NormalCalendar(document.frm, document.frm.stResvDate, document.frm.stResvDateView);" />
+                    <img src="<c:url value='/images/egovframework/com/cmm/icon/bu_icon_carlendar.gif' />" 
+                    onClick="javascript:fn_egov_NormalCalendar(document.frm, document.frm.stResvDate, document.frm.stResvDateView);"
+                    width="15" height="15" alt="달력창팝업버튼이미지">
+			     	-
+			     	<input type="hidden" id="edResvDate" name="edResvDate" value="${searchVO.stResvDate}" /> 
+			     	<input type="text" id="edResvDateView" name="edResvDateView" value="${fn:substring(searchVO.edResvDate,0,4)}-${fn:substring(searchVO.edResvDate,4,6)}-${fn:substring(searchVO.edResvDate,6,8)}" title="기간검색종료일" onClick="javascript:fn_egov_NormalCalendar(document.frm, document.frm.edResvDate, document.frm.edResvDateView);" />
+			     	<img src="<c:url value='/images/egovframework/com/cmm/icon/bu_icon_carlendar.gif' />"
+		      	onClick="javascript:fn_egov_NormalCalendar(document.frm, document.frm.edResvDate, document.frm.edResvDateView);"
+			    width="15" height="15" alt="달력창팝업버튼이미지">
+			     <br/><form:errors path="ntceBgndeView" />
+				 <br/><form:errors path="ntceEnddeView" /> 
                     <div class="grayBox mt5">
                         <input type="radio" id="statusAll" name="searchStatus" value="" <c:if test="${boardVO.searchStatus == ''}">checked="checked"</c:if>><label for="statusAll">전체</label>&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="radio" id="statusA" name="searchStatus" value="A" <c:if test="${boardVO.searchStatus == 'A'}">checked="checked"</c:if>><label for="statusA">신청중</label>&nbsp;&nbsp;&nbsp;&nbsp;
