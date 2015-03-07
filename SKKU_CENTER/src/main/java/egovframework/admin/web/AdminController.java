@@ -42,6 +42,7 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 @Controller
 public class AdminController {
 
+	
     //protected Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource(name = "EgovBBSManageService")
